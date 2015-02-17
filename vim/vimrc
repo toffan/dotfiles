@@ -1,0 +1,80 @@
+" for bundle, various plugins
+    set nocompatible                " be iMproved, required
+    filetype off                    " required
+
+    set rtp+=~/.vim/bundle/Vundle.vim
+    call vundle#begin()
+
+        Plugin 'gmarik/Vundle.vim'
+        Plugin 'bling/vim-airline'
+        Plugin 'tpope/vim-sensible'
+        Plugin 'Valloric/YouCompleteMe'
+        Plugin 'scrooloose/syntastic'
+
+    call vundle#end()
+" For syntastic
+    let g:syntastic_tex_checkers = ['chktek']
+
+" for C++
+    let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm_extra_conf.py'
+    let g:syntastic_cpp_compiler_options='-std=c++1y'
+    let g:ycm_complete_in_comments=1
+    let g:ycm_confirm_extra_conf=0
+    set matchpairs+=<:>
+    " disable autocomment for //
+    au FileType c,cpp setlocal comments-=:// comments+=f://
+
+    set path+=include
+
+
+" ADA
+    let g:ada_standard_types=1  " Colorie les types Ada.
+
+" other stuff
+    set nocompatible
+    set noignorecase
+    set showmode showcmd
+    set ruler
+    set report=0
+    set undolevels=1000
+    set backspace=indent,eol,start
+    set sidescroll=1
+    set wildchar=<Tab>
+    set joinspaces
+    set errorformat=%f:%l:\ %m
+    filetype plugin indent on
+    syntax on
+
+" Coloration
+set t_Co=256
+colorscheme toffan
+
+" Flag problematic whitespace (trailing spaces, spaces before tabs).
+match BadWhitespace /\s\+$\| \+\t/
+
+
+" Personal changes
+    set shiftwidth=4            " number of spaces for a tab
+    set expandtab               " use spaces, not tabs
+    set softtabstop=-1          " use spaces, not tabs
+    set ai                      " auto indentation
+    set nu                      " number of the current line
+    set rnu                     " relative number of line
+
+
+" Move up and down by visual lines not buffer lines.
+    nnoremap <Up>   gk
+    vnoremap <Up>   gk
+    nnoremap <Down> gj
+    vnoremap <Down> gj
+
+" Shortcuts to insert a line
+    nmap <S-Enter> O<Esc>
+    nmap <CR> o<Esc>
+
+" wrap et 80th column
+    set textwidth=80
+    set whichwrap=b,s,h,l,<,>,~,[,]
+" color at 80th column
+    set colorcolumn=81,91,101
+    hi ColorColumn ctermbg=235

@@ -1,0 +1,73 @@
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+setopt nomatch
+unsetopt appendhistory autocd beep extendedglob notify
+bindkey -e
+# End of lines configured by zsh-newuser-install
+
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/toffan/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
+
+# Modification du prompt
+export TERM=xterm-256color
+autoload -U colors
+colors
+PROMPT="%n@%{$fg_bold[blue]%}%m %{$fg_no_bold[cyan]%}%3~ %{$reset_color%}%# "
+
+# Couleurs pour le ls
+# export LS_COLORS="/home/toffan/.ls_colors"
+eval `dircolors /home/toffan/.ls_colors`
+
+# Alias
+alias ls='ls --color=auto'
+alias ll='ls --color=auto -lh'
+alias lll='ls --color=auto -lha'
+alias cd..='cd ..'
+alias grep='grep --color=auto'
+
+alias mountdata='sudo mount /dev/sdb1 /media/data'
+alias umountdata='sudo umount /media/data'
+alias mountusb='sudo mount /dev/sdc1 /media/usb'
+alias umountusb='sudo umount /media/usb'
+
+alias -s pdf="evince "
+
+alias azer='setxkbmap fr bepo'
+alias bépo='setxkbmap fr'
+
+export EDITOR=/usr/bin/vim
+
+# Autojump
+[[ -s /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh
+
+
+# Keybindings {{{
+#  bindkey -e
+#  bindkey '^A'    beginning-of-line    # Home
+#  bindkey '^E'    end-of-line          # End
+#  bindkey '^D'    delete-char          # Del
+#  bindkey '^[[1~' beginning-of-line    # Home
+  bindkey '^[[3~' delete-char          # Del
+#  bindkey '^[[4~' end-of-line          # End
+#  bindkey '^[[5~' up-line-or-history   # Page  Up
+#  bindkey '^[[6~' down-line-or-history # Page  Down
+#  bindkey "^[[7~" beginning-of-line    # Home
+#  bindkey "^[[8~" end-of-line          # End
+#  bindkey "^[OH"  beginning-of-line
+#  bindkey "^[OF"  end-of-line
+#  bindkey "^[[H"  beginning-of-line
+#  bindkey "^[[F"  end-of-line
+#  bindkey '^[[A'  up-line-or-search    # Up
+#  bindkey '^[[D'  backward-char        # Left
+#  bindkey '^[[B'  down-line-or-search  # Down
+#  bindkey '^[[C'  forward-char         # Right
+#  bindkey '^r'    history-incremental-search-backward # CTRL-R - Recherche dans l'historique
+#  bindkey '#'     pound-insert
+# }}}
