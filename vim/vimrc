@@ -42,6 +42,7 @@
     set wildchar=<Tab>
     set joinspaces
     set errorformat=%f:%l:\ %m
+    set whichwrap=b,s,h,l,<,>,~,[,]
     filetype plugin indent on
     syntax on
 
@@ -72,9 +73,7 @@ match BadWhitespace /\s\+$\| \+\t/
     nmap <S-Enter> O<Esc>
     nmap <CR> o<Esc>
 
-" wrap et 80th column
+" 80th column rule
     set textwidth=80
-    set whichwrap=b,s,h,l,<,>,~,[,]
-" color at 80th column
     set colorcolumn=81,91,101
     hi ColorColumn ctermbg=235
