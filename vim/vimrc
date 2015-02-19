@@ -51,20 +51,19 @@
     syntax on
 
 " Coloration
-set t_Co=256
-colorscheme toffan
+    set t_Co=256
+    colorscheme toffan
 
 " Flag problematic whitespace (trailing spaces, spaces before tabs).
-match BadWhitespace /\s\+$\| \+\t/
+    match BadWhitespace /\s\+$\| \+\t/
 
 
 " Personal changes
     set shiftwidth=4            " number of spaces for a tab
     set expandtab               " use spaces, not tabs
-    set softtabstop=-1          " use spaces, not tabs
-    set ai                      " auto indentation
-    set nu                      " number of the current line
-    set rnu                     " relative number of line
+    set autoindent              " auto indentation
+    set number                  " number of the current line
+    set relativenumber          " relative number of line
 
 
 " Move up and down by visual lines not buffer lines.
