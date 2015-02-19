@@ -1,6 +1,4 @@
-" Maintainer:	Henrique C. Alves (hcarvalhoalves@gmail.com)
-" Version:      1.1
-" Last Change:	September 23 2008
+" toffan.vim
 
 set background=dark
 
@@ -48,6 +46,7 @@ hi Keyword		guifg=#cdd129 gui=none ctermfg=184
 hi PreProc              guifg=#ede39e gui=none ctermfg=187
 hi Number		guifg=#ede39e gui=none ctermfg=187
 hi Special		guifg=#acf0f2 gui=none ctermfg=159
+
 hi BadWhitespace        guibg=red term=standout ctermbg=red
 
 " YouCompleteMe highlighting
