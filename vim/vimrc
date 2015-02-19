@@ -2,7 +2,7 @@
     set nocompatible                " be iMproved, required
     filetype off                    " required
 
-    let g:HasVundle = !empty(glob(expand("~") . "/.vim/bundle/vundle/*"))
+    let g:HasVundle = !empty(glob(expand("~") . "/.vim/bundle/Vundle.vim/*"))
     if g:HasVundle
         set rtp+=~/.vim/bundle/Vundle.vim
         call vundle#begin()

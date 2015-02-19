@@ -25,24 +25,28 @@ PROMPT="%n@%{$fg_bold[blue]%}%m %{$fg_no_bold[cyan]%}%3~ %{$reset_color%}%# "
 # export LS_COLORS="/home/toffan/.ls_colors"
 eval `dircolors /home/toffan/.ls_colors`
 
-# Alias
+# General
 alias ls='ls --color=auto'
 alias ll='ls --color=auto -lh'
 alias lll='ls --color=auto -lha'
 alias cd..='cd ..'
 alias grep='grep --color=auto'
 
+alias -s pdf="evince "
+
+# Mount
 alias mountdata='sudo mount /dev/sdb1 /media/data'
 alias umountdata='sudo umount /media/data'
 alias mountusb='sudo mount /dev/sdc1 /media/usb'
 alias umountusb='sudo umount /media/usb'
 
-alias -s pdf="evince "
-
+# Bépo
 alias azer='setxkbmap fr bepo'
 alias bépo='setxkbmap fr'
 
+# Environment variables
 export EDITOR=/usr/bin/vim
+export CLASSPATH=.:/usr/share/java/junit.jar
 
 # Autojump
 [[ -s /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh
