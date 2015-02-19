@@ -25,6 +25,7 @@ hi Cursor	        guifg=NONE    guibg=#656565 gui=none ctermbg=0x241
 hi Normal	        guifg=#f6f3f0 guibg=#242424 gui=none ctermfg=254
 hi NonText              guifg=#808080 guibg=#303030 gui=none ctermfg=242
 hi LineNr	        guifg=#5c5a4f guibg=#000000 gui=none ctermfg=242
+hi CursorLineNr	        guifg=#5c5a4f guibg=#000000 gui=none ctermfg=202
 hi StatusLine           guifg=#f6f3e8 guibg=#444444 gui=italic
 hi StatusLineNC         guifg=#857b6f guibg=#444444 gui=none
 hi VertSplit            guifg=#444444 guibg=#444444 gui=none
