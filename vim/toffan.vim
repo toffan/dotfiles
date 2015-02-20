@@ -56,5 +56,5 @@ hi BadWhitespace        guibg=red term=standout ctermbg=red
 hi SignColumn           ctermbg=none
 hi SyntasticErrorSign   ctermfg=160
 hi SyntasticWarningSign ctermfg=162
-hi SyntasticError       ctermfg=160
-hi SyntasticWarning     ctermfg=162
+hi SyntasticError       ctermfg=232 ctermbg=160
+hi SyntasticWarning     ctermfg=232 ctermbg=162
