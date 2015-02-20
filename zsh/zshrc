@@ -7,6 +7,7 @@ unsetopt appendhistory autocd beep extendedglob notify
 bindkey -e
 # End of lines configured by zsh-newuser-install
 
+
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/toffan/.zshrc'
 
@@ -21,18 +22,22 @@ autoload -U colors
 colors
 PROMPT="%n@%{$fg_bold[blue]%}%m %{$fg_no_bold[cyan]%}%3~ %{$reset_color%}%# "
 
+
 # Couleurs pour le ls
 # export LS_COLORS="/home/toffan/.ls_colors"
 eval `dircolors /home/toffan/.ls_colors`
+
 
 # General
 alias ls='ls --color=auto'
 alias ll='ls --color=auto -lh'
 alias lll='ls --color=auto -lha'
+
 alias cd..='cd ..'
 alias grep='grep --color=auto'
 
 alias -s pdf="evince "
+
 
 # Mount
 alias mountdata='sudo mount /dev/sdb1 /media/data'
@@ -40,13 +45,20 @@ alias umountdata='sudo umount /media/data'
 alias mountusb='sudo mount /dev/sdc1 /media/usb'
 alias umountusb='sudo umount /media/usb'
 
+
 # Bépo
 alias azer='setxkbmap fr bepo'
 alias bépo='setxkbmap fr'
 
+
 # Environment variables
 export EDITOR=/usr/bin/vim
 export CLASSPATH=.:/usr/share/java/junit.jar
+
+
+# Java
+alias javadoc='javadoc -encoding UTF-8 -docencoding UTF-8 -charset UTF-8'
+
 
 # Autojump
 [[ -s /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh
