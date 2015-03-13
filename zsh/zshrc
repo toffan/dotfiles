@@ -59,9 +59,9 @@ export CLASSPATH=.:/usr/share/java/junit.jar
 # Java
 alias javadoc='javadoc -encoding UTF-8 -docencoding UTF-8 -charset UTF-8'
 
-
 # Autojump
 [[ -s /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh
+
 
 
 # Keybindings {{{

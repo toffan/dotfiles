@@ -11,7 +11,10 @@
         Plugin 'bling/vim-airline'
         Plugin 'tpope/vim-sensible'
         Plugin 'Valloric/YouCompleteMe'
+        Plugin 'SirVer/ultisnips'
         Plugin 'scrooloose/syntastic'
+        Plugin 'tpope/vim-commentary'
+        Plugin 'tpope/vim-endwise'
 
         call vundle#end()
     end
