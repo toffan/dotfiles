@@ -50,8 +50,14 @@ eval `dircolors /home/toffan/.ls_colors`
 ### }}}
 
 ### ALIASES {{{
-mkdircd () { mkdir $1; cd $1; }
-todo () { markdown ~/todolist.md > /tmp/todo.html; firefox /tmp/todo.html; }
+mkdircd () {
+    mkdir $1;
+    cd $1;
+}
+todo () {
+    markdown ~/todolist.md > /tmp/todo.html;
+    firefox /tmp/todo.html;
+}
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
@@ -92,6 +98,6 @@ export CLASSPATH=.:/usr/share/java/junit.jar
 [[ -s /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh
 
 # Keybindings
-bindkey -v
+bindkey -e
 bindkey '^R' history-incremental-search-backward
 bindkey '^[[3~' delete
