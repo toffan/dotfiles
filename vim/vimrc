@@ -16,6 +16,7 @@
         Plugin 'tpope/vim-commentary'
         Plugin 'tpope/vim-endwise'
         Plugin 'javacomplete'
+        Plugin 'Yggdroot/indentLine'
 
         call vundle#end()
     end
@@ -23,22 +24,34 @@
 " For syntastic
     let g:syntastic_tex_checkers = ['chktek']
 
-" for C++
+" For C++
     let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm_extra_conf.py'
     let g:syntastic_cpp_compiler_options='-std=c++1y'
     let g:ycm_complete_in_comments=1
     let g:ycm_confirm_extra_conf=0
     set matchpairs+=<:>
-    " disable autocomment for //
-    au FileType c,cpp setlocal comments-=:// comments+=f://
+    autocmd FileType c,cpp setlocal comments-=:// comments+=f://
+    autocmd FileType c,cpp setlocal textwidth=0
 
     set path+=include
 
+" For Java
+    autocmd Filetype java setlocal omnifunc=javacomplete#Complete
+    set suffixes+=.class
+    let g:syntastic_java_javac_config_file_enabled=1
 
-" ADA
-    let g:ada_standard_types=1  " Colorie les types Ada.
+" For html and css
+    autocmd Filetype htlm,css set sw=2
 
-" other stuff
+" Spell checking and wrapping in some file types
+    autocmd Filetype gitcommit set spell textwidth=72 nofoldenable colorcolumn=51,73
+    autocmd Filetype mkd,liquid,tex set spell textwidth=80
+
+" Don't exit visual mode when shifting.
+    vnoremap < <gv
+    vnoremap > >gv
+
+" Other stuff
     set nocompatible
     set noignorecase
     set showmode showcmd
@@ -57,8 +70,6 @@
 " Coloration
     set t_Co=256
     colorscheme toffan
-
-" Flag problematic whitespace (trailing spaces, spaces before tabs).
     match BadWhitespace /\s\+$\| \+\t/
 
 
