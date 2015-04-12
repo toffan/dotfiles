@@ -80,7 +80,6 @@ alias umountdata='sudo umount /media/data'
 alias mountusb='sudo mount /dev/sdc1 /media/usb'
 alias umountusb='sudo umount /media/usb'
 
-alias sshtitan='ssh lemarcb@titan.inpt.fr'
 alias javadoc='javadoc -encoding UTF-8 -docencoding UTF-8 -charset UTF-8'
 
 alias -s pdf="evince "
