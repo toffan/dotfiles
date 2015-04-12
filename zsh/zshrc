@@ -46,7 +46,7 @@ colors
 PROMPT="%n@%{$fg_bold[blue]%}%m %{$fg_no_bold[cyan]%}%3~ %{$reset_color%}%# "
 
 # Set ls colors
-eval `dircolors /home/toffan/.ls_colors`
+eval `dircolors ~/.ls_colors`
 
 # Add color to man pages
 man() {
