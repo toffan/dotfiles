@@ -199,15 +199,16 @@ cputempwidget = wibox.widget.textbox()
 vicious.register(cputempwidget, vicious.widgets.thermal,
     function (widget, args)
         r = ' T: '
+        temp = math.floor(args[1])
 
-        if args[1] < 46 then
-            r = r .. '<span color="turquoise">' .. args[1] .. '</span>'
-        elseif	args[1] < 61 then
-            r = r .. '<span color="yellow">' .. args[1] .. '</span>'
-        elseif  args[1] < 76 then
-            r = r .. '<span color="orange">' .. args[1] .. '</span>'
+        if temp < 46 then
+            r = r .. '<span color="turquoise">' .. temp .. '</span>'
+        elseif	temp < 61 then
+            r = r .. '<span color="yellow">' .. temp .. '</span>'
+        elseif  temp < 76 then
+            r = r .. '<span color="orange">' .. temp .. '</span>'
         else
-            r = r .. '<span color="red">' .. args[1] .. '</span>'
+            r = r .. '<span color="red">' .. temp .. '</span>'
         end
 
         r = r .. '°C '
