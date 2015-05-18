@@ -526,7 +526,7 @@ globalkeys = awful.util.table.join(
     end),
 
     awful.key({ modkey }, "F9", function ()
-        awful.util.spawn_with_shell("synclient TouchpadOff=$(synclient -l | grep -c 'TouchpadOff.*=.*0')") 
+        awful.util.spawn_with_shell("synclient TouchpadOff=$(synclient -l | grep -c 'TouchpadOff.*=.*0')")
     end),
 
     -- Audio Keybindings
@@ -560,7 +560,7 @@ globalkeys = awful.util.table.join(
         vicious.force({ volwidget, })
     end),
 
-    awful.key({ modkey }, "F11", function () 
+    awful.key({ modkey }, "F11", function ()
         awful.util.spawn("amixer -q sset Master 2%-")
         vicious.force({ volwidget, })
     end),
@@ -570,10 +570,10 @@ globalkeys = awful.util.table.join(
         vicious.force({ volwidget, })
     end),
 
-    awful.key({ modkey }, "n", function ()                                                                                  
-        awful.util.spawn("mocp --next")                                                          
-    end), 
-    
+    awful.key({ modkey }, "n", function ()
+        awful.util.spawn("mocp --next")
+    end),
+
     -- Troll Keybindings
     awful.key({ modkey }, Numeric_Pad[1], function ()
         awful.util.spawn("paplay /home/toffan/Musique/Répliques/cest_pas_faux.ogg")
@@ -586,27 +586,27 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey }, Numeric_Pad[3], function ()
         awful.util.spawn("paplay /home/toffan/Musique/Répliques/faire_toi_meme.ogg")
     end),
-    
+
     awful.key({ modkey }, Numeric_Pad[4], function ()
         awful.util.spawn("paplay /home/toffan/Musique/Répliques/insinuyer_sir.ogg")
     end),
-    
+
     awful.key({ modkey }, Numeric_Pad[5], function ()
         awful.util.spawn("paplay /home/toffan/Musique/Répliques/pas_drole.ogg")
     end),
-    
+
     awful.key({ modkey }, Numeric_Pad[6], function ()
         awful.util.spawn("paplay /home/toffan/Musique/Répliques/pas_une_blague.ogg")
     end),
-    
+
     awful.key({ modkey }, Numeric_Pad[7], function ()
         awful.util.spawn("paplay /home/toffan/Musique/Répliques/coup_masse_gueule.ogg")
     end),
-    
+
     awful.key({ modkey }, Numeric_Pad[8], function ()
         awful.util.spawn("paplay /home/toffan/Musique/Répliques/mur_monte_démonte.ogg")
     end),
-    
+
     awful.key({ modkey }, Numeric_Pad[9], function ()
         awful.util.spawn("paplay /home/toffan/Musique/Répliques/deconcentration.ogg")
     end)
@@ -680,7 +680,7 @@ root.keys(globalkeys)
 awful.rules.rules = {
     -- All clients will match this rule.
     { rule = { },
-      properties = { 
+      properties = {
           border_width = beautiful.border_width,
           border_color = beautiful.border_normal,
           focus = awful.client.focus.filter,
