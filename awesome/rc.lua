@@ -157,7 +157,7 @@ vicious.register(batwidget, vicious.widgets.bat,
                 preset = naughty.config.presets.critical,
                 title = 'Batterie',
                 text = 'La batterie doit être chargée immédiatement !',
-                timeout = 5 })
+                timeout = 30 })
         end
 
         return r
