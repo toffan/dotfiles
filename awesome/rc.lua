@@ -501,7 +501,7 @@ globalkeys = awful.util.table.join(
 
     -- Personnal Key Bindings
     awful.key({ modkey }, "F1", function ()
-        awful.util.spawn("i3lock -i /home/toffan/Images/Wallpapers/rdash_ice.png")
+        awful.util.spawn("i3lock -i " .. os.getenv("HOME") .. "/Pictures/Wallpapers/screenlock")
     end),
 
     awful.key({ modkey }, "f", function ()
