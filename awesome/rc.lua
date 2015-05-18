@@ -94,20 +94,16 @@ end
 -- }}}
 
 -- {{{ Menu
--- Create a laucher widget and a main menu
-myawesomemenu = {
-   { "Manual", terminal .. " -e 'man awesome'" },
-   { "Edit config", editor_cmd .. " " .. awesome.conffile },
-   { "Restart", awesome.restart },
-   { "Quit", awesome.quit }
-}
 
-mymainmenu = awful.menu({ items = { { "Awesome", myawesomemenu, beautiful.awesome_icon },
-                                    { "Open terminal", terminal },
-                                    { "Reboot", terminal .. " -e 'sudo reboot'" },
-                                    { "Shutdown", terminal .. " -e 'systemctl poweroff'" },
-                                  }
-                        })
+mymainmenu = awful.menu( {
+    items = {
+        { "restart awesome", awesome.restart },
+        { "quit awesome", awesome.quit },
+        -- { "suspend", function() awful.util.spawn_with_shell("i3lock -i " .. os.getenv("HOME") .. "/Pictures/Wallpapers/screenlock && systemctl suspend") end },
+        { "reboot", terminal .. " -e 'systemctl reboot'" },
+        { "shutdown", terminal .. " -e 'systemctl poweroff'" },
+    }
+})
 
 mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
                                      menu = mymainmenu })
