@@ -65,8 +65,8 @@ local layouts =
     awful.layout.suit.tile.top,
     awful.layout.suit.fair,
     awful.layout.suit.fair.horizontal,
-    awful.layout.suit.spiral,
-    awful.layout.suit.spiral.dwindle,
+    -- awful.layout.suit.spiral,
+    -- awful.layout.suit.spiral.dwindle,
     awful.layout.suit.max,
     awful.layout.suit.max.fullscreen,
     awful.layout.suit.magnifier
@@ -83,11 +83,13 @@ end
 
 -- {{{ Tags
 -- Define a tag table which hold all screen tags.
-tags = {}
+tags = {
+    names = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b" },
+    layout = { layouts[6], layouts[2], layouts[6], layouts[6], layouts[6], layouts[6], layouts[6], layouts[6], layouts[6], layouts[6], layouts[6] }
+}
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
-    tags[s] = awful.tag({ 1, 2, 3, 4, 5, 6, 7, 8, 9 }, s,
-        { layouts[6], layouts[2], layouts[6], layouts[6], layouts[6], layouts[4], layouts[4], layouts[4], layouts[4] })
+    tags[s] = awful.tag(tags.names, s, tags.layout)
 end
 -- }}}
 
@@ -635,7 +637,7 @@ clientkeys = awful.util.table.join(
 -- Bind all key numbers to tags.
 -- Be careful: we use keycodes to make it works on any keyboard layout.
 -- This should map on the top row of your keyboard, usually 1 to 9.
-for i = 1, 9 do
+for i = 1, #tags.names do
     globalkeys = awful.util.table.join(globalkeys,
         awful.key({ modkey }, "#" .. i + 9,
                   function ()
@@ -703,9 +705,9 @@ awful.rules.rules = {
     { rule = { class = "Pidgin" },
       properties = { tag = tags[1][5] } },
     { rule = { class = "Pavucontrol" },
-      properties = { tag = tags[1][9] } },
+      properties = { tag = tags[1][11] } },
     { rule = { class = "Rhythmbox" },
-      properties = { tag = tags[1][9] } },
+      properties = { tag = tags[1][11] } },
 }
 -- }}}
 
