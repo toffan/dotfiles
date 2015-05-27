@@ -80,7 +80,7 @@
     match BadWhitespace /\s\+$\| \+\t/
 
 
-" Personal changes
+" Personal settings
     set shiftwidth=4            " number of spaces for a tab
     set expandtab               " use spaces, not tabs
     set autoindent              " auto indentation
