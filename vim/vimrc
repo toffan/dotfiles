@@ -17,6 +17,7 @@
         Plugin 'tpope/vim-endwise'
         Plugin 'javacomplete'
         Plugin 'Yggdroot/indentLine'
+        Plugin 'matze/vim-move'
 
         call vundle#end()
     end
@@ -46,6 +47,12 @@
 " Spell checking and wrapping in some file types
     autocmd Filetype gitcommit set spell textwidth=72 nofoldenable colorcolumn=51,73
     autocmd Filetype mkd,liquid,tex set spell textwidth=80
+
+" Change keymap for vim-move
+    nmap <C-Up>   <Plug>MoveLineUp
+    vmap <C-Up>   <Plug>MoveBlockUp
+    nmap <C-Down> <Plug>MoveLineDown
+    vmap <C-Down> <Plug>MoveBlockDown
 
 " Don't exit visual mode when shifting.
     vnoremap < <gv
