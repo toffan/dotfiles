@@ -538,7 +538,7 @@ globalkeys = awful.util.table.join(
         vicious.force({ volwidget, })
     end),
 
-    awful.key({ modkey }, "F3", function ()
+    awful.key({ modkey }, "F4", function ()
         awful.util.spawn("amixer -q sset Master 2%+")
         vicious.force({ volwidget, })
     end),
@@ -548,7 +548,7 @@ globalkeys = awful.util.table.join(
         vicious.force({ volwidget, })
     end),
 
-    awful.key({ modkey }, "F2", function ()
+    awful.key({ modkey }, "F3", function ()
         awful.util.spawn("amixer -q sset Master 2%-")
         vicious.force({ volwidget, })
     end),
