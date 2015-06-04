@@ -1,10 +1,13 @@
-hi StatusLine color: black;
-set gui=nonavigation
-set gui=nobookmarks
+" Set GUI
+    hi StatusLine color: black;
+    set gui=nonavigation
+    set gui=nobookmarks
 
 let mapleader = ","
 
-nnoremap <A-Left> gT
-nnoremap <A-Right> gt
-nnoremap <C-Left> H
-nnoremap <C-Right> L
+" previous - next && tab change
+    nnoremap <A-Left> gT
+    nnoremap <A-Right> gt
+    nnoremap <C-Left> H
+    nnoremap <C-Right> L
+
