@@ -509,6 +509,8 @@ globalkeys = awful.util.table.join(
         awful.util.spawn("firefox")
     end),
 
+    -- Avez vous testé "AwesomeRocks" ?
+
     awful.key({ modkey }, "p", function ()
         awful.util.spawn("pidgin")
     end),
