@@ -37,16 +37,17 @@
     set path+=include
 
 " For Java
+    autocmd FileType java setlocal textwidth=0
     autocmd Filetype java setlocal omnifunc=javacomplete#Complete
     set suffixes+=.class
     let g:syntastic_java_javac_config_file_enabled=1
 
 " For html and css
-    autocmd Filetype htlm,css set shiftwidth=2
+    autocmd Filetype htlm,css setlocal shiftwidth=2
 
 " Spell checking and wrapping in some file types
     autocmd Filetype gitcommit set spell textwidth=72 nofoldenable colorcolumn=51,73
-    autocmd Filetype mkd,liquid,tex set spell textwidth=80 shiftwidth=2
+    autocmd Filetype mkd,liquid,tex,text set spell textwidth=80 shiftwidth=2
 
 " Change keymap for vim-move
     nmap <C-Up>   <Plug>MoveLineUp
@@ -99,6 +100,5 @@
     nmap <CR> o<Esc>
 
 " 80th column rule
-    set textwidth=80
     set colorcolumn=81,91,101
     hi ColorColumn ctermbg=235
