@@ -502,7 +502,7 @@ globalkeys = awful.util.table.join(
 
     -- Personnal Key Bindings
     awful.key({ modkey }, "F1", function ()
-        awful.util.spawn("i3lock -i " .. os.getenv("HOME") .. "/Pictures/Wallpapers/screenlock")
+        awful.util.spawn("i3lock -u -i " .. os.getenv("HOME") .. "/Pictures/Wallpapers/screenlock")
     end),
 
     awful.key({ modkey }, "f", function ()
