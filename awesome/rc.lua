@@ -99,7 +99,9 @@ mymainmenu = awful.menu( {
     items = {
         { "restart awesome", awesome.restart },
         { "quit awesome", awesome.quit },
-        -- { "suspend", function() awful.util.spawn_with_shell("i3lock -i " .. os.getenv("HOME") .. "/Pictures/Wallpapers/screenlock && systemctl suspend") end },
+        { "suspend", function()
+            awful.util.spawn_with_shell("i3lock -u -i " .. os.getenv("HOME") .. "/Pictures/Wallpapers/screenlock; systemctl suspend")
+        end },
         { "reboot", terminal .. " -e 'systemctl reboot'" },
         { "shutdown", terminal .. " -e 'systemctl poweroff'" },
     }
