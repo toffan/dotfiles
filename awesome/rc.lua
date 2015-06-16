@@ -402,9 +402,13 @@ globalkeys = awful.util.table.join(
         awful.tag.viewnext
     ),
 
-    awful.key({modkey}, "Escape",
-        awful.tag.history.restore
-    ),
+    awful.key({modkey}, "Escape", function()
+        if awful.client.urgent.get() then
+            awful.client.urgent.jumpto()
+        else
+            awful.tag.history.restore()
+        end
+    end),
 
     awful.key({modkey}, "j", function()
         awful.client.focus.byidx(1)
@@ -440,10 +444,6 @@ globalkeys = awful.util.table.join(
     awful.key({modkey, "Control"}, "k", function()
         awful.screen.focus_relative(-1)
     end),
-
-    awful.key({modkey}, "u",
-        awful.client.urgent.jumpto
-    ),
 
     awful.key({modkey}, "Tab", function()
         awful.client.focus.byidx(1)
