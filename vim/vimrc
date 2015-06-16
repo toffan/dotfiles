@@ -18,6 +18,7 @@
         Plugin 'javacomplete'
         Plugin 'Yggdroot/indentLine'
         Plugin 'matze/vim-move'
+        Plugin 'rust-lang/rust.vim'
 
         call vundle#end()
     end
