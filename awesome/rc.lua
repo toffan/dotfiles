@@ -182,16 +182,19 @@ vicious.register(volwidget, vicious.widgets.volume,
 memwidget = wibox.widget.textbox()
 vicious.register(memwidget, vicious.widgets.mem,
     function(widget, args)
-        color = '#00ff00'
-        if args[1] >= 86 then
-            color = "red"
-        elseif args[1] >= 71 then
-            color = "orange"
-        elseif args[1] >= 51 then
-            color = "yellow"
+        r = ' RAM: '
+
+        if args[1] >= 80 then
+            r = r .. '<span color="red">' .. args[1] .. '</span>'
+        elseif args[1] >= 60 then
+            r = r .. '<span color="orange">' .. args[1] .. '</span>'
+        else
+            r = r .. args[1]
         end
 
-        return ' RAM: <span color="' .. color .. '">' .. args[1] .. '</span>% (<span color="' .. color .. '">' .. args[2] .. '</span>MB/' .. args[3] .. 'MB) '
+        r = r .. '% '
+
+        return r
     end, 2)
 
 -- CPU Temperature Widget
