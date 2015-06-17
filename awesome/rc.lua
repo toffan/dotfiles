@@ -246,12 +246,12 @@ vicious.register(cpuinfowidget, vicious.widgets.cpu,
 lanwidget = wibox.widget.textbox()
 vicious.register(lanwidget, vicious.widgets.net,
     function(widget, args)
-        r = ' LAN: '
+        r = ''
 
-        if args['{enp4s0 carrier}'] == 1 then
-            r = r .. '<span color="#00ff00">ON</span> '
+        if args['{enp4s0 carrier}'] == 0 then
+            r = ' -LAN- '
         else
-            r = r .. '<span color="red">OFF</span> '
+            r = ' LAN '
         end
 
         return r
