@@ -165,16 +165,18 @@ vicious.register(batwidget, vicious.widgets.bat,
 volwidget = wibox.widget.textbox()
 vicious.register(volwidget, vicious.widgets.volume,
     function(widget, args)
-        r = ' SOUND: '
+        r = ' '
 
         if args[2] == '♫' then
-            r = r .. '<span color="#00ff00">' .. args[1] .. '</span>% '
+            r = r .. 'SOUND: '
         else
-            r = r .. '<span color="red">' .. args[1] .. '</span>M '
+            r = r .. 'MUTED: '
         end
 
+        r = r .. args[1] .. '% '
+
         return r
-    end, 10, 'Master')
+    end, 2, 'Master')
 
 -- Memory Widget
 memwidget = wibox.widget.textbox()
