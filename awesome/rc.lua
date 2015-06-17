@@ -225,18 +225,20 @@ cpuinfowidget = wibox.widget.textbox()
 vicious.register(cpuinfowidget, vicious.widgets.cpu,
     function(widget, args)
         r = ' CPU: '
+        color = ''
 
-        if args[1] < 31 then
-            r = r .. '<span color="#00ff00">' .. args[1] .. '</span>'
-        elseif args[1] < 51 then
-            r = r .. '<span color="yellow">' .. args[1] .. '</span>'
+        if args[1] < 30 then
+            color = 'turquoise'
+        elseif args[1] < 50 then
+            color = 'yellow'
         elseif args[1] < 70 then
-            r = r .. '<span color="orange">' .. args[1] .. '</span>'
+            color = 'orange'
         else
-            r = r ..'<span color="red">' .. args[1] .. '</span>'
+            color = 'red'
         end
 
-        r = r .. '% '
+        r = r ..'<span color="' .. color .. '">' .. args[1] .. '</span>% '
+
         return r
     end, 2)
 
