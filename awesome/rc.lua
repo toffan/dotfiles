@@ -118,15 +118,15 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 
 -- Create a textclock widget
 os.setlocale(os.getenv("LANG"))
-mytextclock = awful.widget.textclock(" %a %d %b %H:%M ", 10)
+mytextclock = awful.widget.textclock("%a %d %b %H:%M", 10)
 
-separator = wibox.widget.textbox('|')
+separator = wibox.widget.textbox(' | ')
 
 -- Battery Widget
 batwidget = wibox.widget.textbox()
 vicious.register(batwidget, vicious.widgets.bat,
     function(widget, args)
-        r = ' BAT: '
+        r = 'BAT: '
 
         if args[3] == 'N/A' then
             r = r .. '↯'
@@ -145,7 +145,7 @@ vicious.register(batwidget, vicious.widgets.bat,
 
         r = r .. '% '
         if args[3] ~= 'N/A' then
-            r = r .. '(' .. args[3] .. ') '
+            r = r .. '(' .. args[3] .. ')'
         end
 
         -- notification if need to load
@@ -165,15 +165,15 @@ vicious.register(batwidget, vicious.widgets.bat,
 volwidget = wibox.widget.textbox()
 vicious.register(volwidget, vicious.widgets.volume,
     function(widget, args)
-        r = ' '
+        r = ''
 
         if args[2] == '♫' then
-            r = r .. 'SOUND: '
+            r = 'SOUND: '
         else
-            r = r .. 'MUTED: '
+            r = 'MUTED: '
         end
 
-        r = r .. args[1] .. '% '
+        r = r .. args[1] .. '%'
 
         return r
     end, 2, 'Master')
@@ -182,7 +182,7 @@ vicious.register(volwidget, vicious.widgets.volume,
 memwidget = wibox.widget.textbox()
 vicious.register(memwidget, vicious.widgets.mem,
     function(widget, args)
-        r = ' RAM: '
+        r = 'RAM: '
 
         if args[1] >= 80 then
             r = r .. '<span color="red">' .. args[1] .. '</span>'
@@ -192,7 +192,7 @@ vicious.register(memwidget, vicious.widgets.mem,
             r = r .. args[1]
         end
 
-        r = r .. '% '
+        r = r .. '%'
 
         return r
     end, 2)
@@ -201,7 +201,7 @@ vicious.register(memwidget, vicious.widgets.mem,
 cputempwidget = wibox.widget.textbox()
 vicious.register(cputempwidget, vicious.widgets.thermal,
     function(widget, args)
-        r = ' T: '
+        r = 'T: '
         temp = math.floor(args[1])
         color = ''
 
@@ -215,7 +215,7 @@ vicious.register(cputempwidget, vicious.widgets.thermal,
             color = 'red'
         end
 
-        r = r .. '<span color="' .. color .. '">' .. temp .. '</span>°C '
+        r = r .. '<span color="' .. color .. '">' .. temp .. '</span>°C'
 
         return r
     end, 2, 'thermal_zone0')
@@ -224,7 +224,7 @@ vicious.register(cputempwidget, vicious.widgets.thermal,
 cpuinfowidget = wibox.widget.textbox()
 vicious.register(cpuinfowidget, vicious.widgets.cpu,
     function(widget, args)
-        r = ' CPU: '
+        r = 'CPU: '
         color = ''
 
         if args[1] < 30 then
@@ -237,7 +237,7 @@ vicious.register(cpuinfowidget, vicious.widgets.cpu,
             color = 'red'
         end
 
-        r = r ..'<span color="' .. color .. '">' .. args[1] .. '</span>% '
+        r = r ..'<span color="' .. color .. '">' .. args[1] .. '</span>%'
 
         return r
     end, 2)
@@ -249,9 +249,9 @@ vicious.register(lanwidget, vicious.widgets.net,
         r = ''
 
         if args['{enp4s0 carrier}'] == 0 then
-            r = ' -LAN- '
+            r = '-LAN-'
         else
-            r = ' LAN '
+            r = 'LAN'
         end
 
         return r
@@ -264,9 +264,9 @@ vicious.register(wifiwidget, vicious.widgets.wifi,
         r = ''
 
         if args['{ssid}'] == 'N/A' then
-            r = ' -WLAN- '
+            r = '-WLAN-'
         else
-            r = ' ' .. args['{ssid}'] .. ' '
+            r = args['{ssid}']
         end
 
         return r
