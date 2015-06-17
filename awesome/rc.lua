@@ -129,22 +129,18 @@ vicious.register(batwidget, vicious.widgets.bat,
         r = ' BAT: '
 
         if args[3] == 'N/A' then
-            r = r .. '<span color="#00ff00">↯</span>'
-        elseif args[1] == '+' then
-            r = r .. '<span color="#00ff00">+</span>'
+            r = r .. '↯'
         else
-            r = r .. '<span color="red">-</span>'
+            r = r .. args[1]
         end
 
         r = r .. ' '
         if args[2] < 15 then
             r = r .. '<span color="red">' .. args[2] .. '</span>'
-        elseif	args[2] < 25 then
+        elseif	args[2] < 35 then
             r = r .. '<span color="orange">' .. args[2] .. '</span>'
-        elseif  args[2] < 35 then
-            r = r .. '<span color="yellow">' .. args[2] .. '</span>'
         else
-            r = r .. '<span color="#00ff00">' .. args[2] .. '</span>'
+            r = r .. args[2]
         end
 
         r = r .. '% '
