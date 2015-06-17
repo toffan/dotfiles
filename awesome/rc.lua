@@ -261,12 +261,12 @@ vicious.register(lanwidget, vicious.widgets.net,
 wifiwidget = wibox.widget.textbox()
 vicious.register(wifiwidget, vicious.widgets.wifi,
     function(widget, args)
-        r = ' WLAN: '
+        r = ''
 
         if args['{ssid}'] == 'N/A' then
-            r = r .. '<span color="red">OFF</span> '
+            r = ' -WLAN- '
         else
-            r = r .. '<span color="#00ff00">' .. args['{ssid}'] .. '</span> '
+            r = ' ' .. args['{ssid}'] .. ' '
         end
 
         return r
