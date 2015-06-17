@@ -203,18 +203,20 @@ vicious.register(cputempwidget, vicious.widgets.thermal,
     function(widget, args)
         r = ' T: '
         temp = math.floor(args[1])
+        color = ''
 
-        if temp < 46 then
-            r = r .. '<span color="turquoise">' .. temp .. '</span>'
-        elseif	temp < 61 then
-            r = r .. '<span color="yellow">' .. temp .. '</span>'
-        elseif  temp < 76 then
-            r = r .. '<span color="orange">' .. temp .. '</span>'
+        if temp < 45 then
+            color = 'turquoise'
+        elseif	temp < 60 then
+            color = 'yellow'
+        elseif  temp < 75 then
+            color = 'orange'
         else
-            r = r .. '<span color="red">' .. temp .. '</span>'
+            color = 'red'
         end
 
-        r = r .. '°C '
+        r = r .. '<span color="' .. color .. '">' .. temp .. '</span>°C '
+
         return r
     end, 2, 'thermal_zone0')
 
