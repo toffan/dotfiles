@@ -115,12 +115,12 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 --}}}
 
 -- {{{Wibox
+separator = wibox.widget.textbox(' | ')
+padding = wibox.widget.textbox('  ')
 
 -- Create a textclock widget
 os.setlocale(os.getenv("LANG"))
 mytextclock = awful.widget.textclock("%a %d %b %H:%M", 10)
-
-separator = wibox.widget.textbox(' | ')
 
 -- Battery Widget
 batwidget = wibox.widget.textbox()
@@ -215,7 +215,7 @@ vicious.register(cputempwidget, vicious.widgets.thermal,
             color = 'red'
         end
 
-        r = r .. '<span color="' .. color .. '">' .. temp .. '</span>°C'
+        r = ' <span color="' .. color .. '">' .. temp .. '</span>°C'
 
         return r
     end, 2, 'thermal_zone0')
@@ -369,12 +369,12 @@ for s = 1, screen.count() do
 
     -- Widgets that are aligned to the right
     local right_layout = wibox.layout.fixed.horizontal()
+    right_layout:add(padding)
     right_layout:add(wifiwidget)
     right_layout:add(separator)
     right_layout:add(lanwidget)
     right_layout:add(separator)
     right_layout:add(cpuinfowidget)
-    right_layout:add(separator)
     right_layout:add(cputempwidget)
     right_layout:add(separator)
     right_layout:add(memwidget)
@@ -384,6 +384,7 @@ for s = 1, screen.count() do
     right_layout:add(batwidget)
     right_layout:add(separator)
     right_layout:add(mytextclock)
+    right_layout:add(padding)
     if s == 1 then
         right_layout:add(wibox.widget.systray())
     end
