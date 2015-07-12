@@ -2,10 +2,11 @@
 [keybindings]
 [profiles]
   [[default]]
-    background_darkness = 0.7
+    background_type = transparent
+    background_color = "#000000"
+    background_darkness = 0.80
     background_image = None
     font = Sans 12
-    background_type = transparent
 [layouts]
   [[default]]
     [[[child1]]]
