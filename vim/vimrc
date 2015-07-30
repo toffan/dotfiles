@@ -105,4 +105,4 @@
 
 " 80th column rule
     set colorcolumn=81,91,101
-    hi ColorColumn ctermbg=235
+    hi ColorColumn ctermbg=239
