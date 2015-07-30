@@ -28,7 +28,7 @@
 
 " For C++
     let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm_extra_conf.py'
-    let g:syntastic_cpp_compiler_options='-std=c++1y'
+    let g:syntastic_cpp_compiler_options='-std=c++1y -linclude'
     let g:ycm_complete_in_comments=1
     let g:ycm_confirm_extra_conf=0
     set matchpairs+=<:>
