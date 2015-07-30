@@ -63,8 +63,10 @@ man() {
 
 ### ALIASES {{{
 mkdircd () {
-    mkdir $1;
-    cd $1;
+    for arg in $@; do;
+        mkdir -p $arg;
+    done;
+    cd ${@:$#};
 }
 todo () {
     markdown ~/todolist.md > /tmp/todo.html;
