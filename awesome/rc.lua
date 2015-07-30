@@ -159,7 +159,7 @@ vicious.register(batwidget, vicious.widgets.bat,
         end
 
         return r
-    end, 5, 'BAT0')
+    end, 10, 'BAT0')
 
 -- Volume Widget
 volwidget = wibox.widget.textbox()
@@ -176,7 +176,7 @@ vicious.register(volwidget, vicious.widgets.volume,
         r = r .. args[1] .. '%'
 
         return r
-    end, 2, 'Master')
+    end, 4, 'Master')
 
 -- Memory Widget
 memwidget = wibox.widget.textbox()
