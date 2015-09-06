@@ -12,41 +12,48 @@ let colors_name = "toffan"
 
 " Vim >= 7.0 specific colors
 if version >= 700
-  hi CursorLine         ctermbg=236
-  hi CursorColumn       ctermbg=236
-  hi MatchParen         ctermbg=59
-  hi Pmenu	        ctermbg=242
-  hi PmenuSel           ctermfg=0 ctermbg=184
+  hi CursorLine         ctermbg=236  cterm=none
+  hi CursorColumn       ctermbg=236  cterm=none
+  hi MatchParen         ctermbg=59   cterm=none
+  hi Pmenu              ctermbg=242  cterm=none
+  hi PmenuSel           ctermfg=0    ctermbg=184
 endif
 
 
 " General colors
-hi Cursor	        ctermbg=0x241
-hi Normal	        ctermfg=254
-hi NonText              ctermfg=242
-hi LineNr	        ctermfg=242
-hi CursorLineNr	        ctermfg=202
-hi Visual		ctermfg=186 ctermbg=238
+hi Cursor               ctermbg=241  cterm=none
+hi Normal               ctermfg=254  cterm=none
+hi NonText              ctermfg=242  cterm=none
+hi LineNr               ctermfg=242  cterm=none
+hi CursorLineNr         ctermfg=202  cterm=none
+hi Visual               ctermbg=232  cterm=reverse
 
 " Syntax highlighting
-hi Comment	        ctermfg=244
-hi Todo                 ctermfg=245
-hi Constant             ctermfg=159
-hi String	        ctermfg=202
-hi Identifier           ctermfg=202
-hi Function             ctermfg=184
-hi Type                 ctermfg=184
-hi Statement            ctermfg=131
-hi Keyword		ctermfg=184
-hi PreProc              ctermfg=187
-hi Number		ctermfg=187
-hi Special		ctermfg=159
+hi Comment              ctermfg=244  cterm=none
 
-hi BadWhitespace        ctermbg=red
+hi Constant             ctermfg=25   cterm=none
+hi String               ctermfg=25   cterm=none
+hi Number               ctermfg=187  cterm=none
+hi Boolean              ctermfg=187  cterm=none
 
-" YouCompleteMe highlighting
+hi Identifier           ctermfg=184  cterm=none
+
+hi Statement            ctermfg=125  cterm=none
+
+hi PreProc              ctermfg=187  cterm=none
+
+hi Type                 ctermfg=81   cterm=none
+
+hi Special              ctermfg=26   cterm=none
+
+hi Todo                 ctermfg=245  cterm=none
+
+" Syntastic highlighting
 hi SignColumn           ctermbg=none
 hi SyntasticErrorSign   ctermfg=160
 hi SyntasticWarningSign ctermfg=162
-hi SyntasticError       ctermfg=232 ctermbg=160
-hi SyntasticWarning     ctermfg=232 ctermbg=162
+hi SyntasticError       ctermfg=232  ctermbg=160
+hi SyntasticWarning     ctermfg=232  ctermbg=162
+
+" Personnal highlighting
+hi BadWhitespace        ctermbg=160  cterm=none
