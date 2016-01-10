@@ -19,6 +19,7 @@
         Plugin 'Yggdroot/indentLine'
         Plugin 'matze/vim-move'
         Plugin 'rust-lang/rust.vim'
+        Plugin 'tell-k/vim-autopep8'
 
         call vundle#end()
     end
@@ -33,6 +34,10 @@
     autocmd FileType c,cpp setlocal textwidth=0
 
     set path+=include
+
+" For Python
+    let g:syntastic_python_checkers = ['flake8']
+    let g:syntastic_python_flake8_post_args = '--ignore=E501,E261'
 
 " For Java
     autocmd FileType java setlocal textwidth=0
