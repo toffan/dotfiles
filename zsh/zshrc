@@ -62,6 +62,9 @@ man() {
 ### }}}
 
 ### ALIASES {{{
+dockip() {
+    docker inspect --format '{{ .NetworkSettings.IPAddress }}' "$@"
+}
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
