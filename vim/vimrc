@@ -19,6 +19,7 @@
         Plugin 'Yggdroot/indentLine'
         Plugin 'matze/vim-move'
         Plugin 'rust-lang/rust.vim'
+        Plugin 'vim-scripts/django.vim'
         Plugin 'tell-k/vim-autopep8'
 
         call vundle#end()
