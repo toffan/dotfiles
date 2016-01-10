@@ -62,10 +62,6 @@ man() {
 ### }}}
 
 ### ALIASES {{{
-todo () {
-    markdown ~/todolist.md > /tmp/todo.html;
-    firefox /tmp/todo.html;
-}
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
