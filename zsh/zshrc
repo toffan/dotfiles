@@ -69,7 +69,8 @@ todo () {
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-alias pacman='pacman --color auto'
+alias pacman='pacman --color=auto'
+alias objdump='objdump --disassembler-options=intel'
 
 alias i3lock='i3lock -u -i $HOME/Pictures/Wallpapers/screenlock'
 alias zzz='i3lock; systemctl suspend'
@@ -81,6 +82,7 @@ alias -g :t='| tail'
 alias -g :w='| wc'
 
 alias alert='notify-send --urgency=low'
+alias l='ls'
 alias ll='ls -lh --time-style=long-iso'
 alias lll='ll -a'
 alias fuck='sudo $(fc -ln -1)'
