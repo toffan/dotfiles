@@ -62,12 +62,6 @@ man() {
 ### }}}
 
 ### ALIASES {{{
-mkdircd () {
-    for arg in $@; do;
-        mkdir -p $arg;
-    done;
-    cd ${@:$#};
-}
 todo () {
     markdown ~/todolist.md > /tmp/todo.html;
     firefox /tmp/todo.html;
