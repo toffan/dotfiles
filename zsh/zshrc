@@ -105,7 +105,6 @@ alias bépo='setxkbmap fr'
 # Environment variables
 export EDITOR=/usr/bin/vim
 export CLASSPATH=.:/usr/share/java/junit.jar
-export PATH=$HOME/.scripts:$PATH
 
 # Autojump
 [[ -s /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh
