@@ -32,7 +32,7 @@ compinit
 zstyle ':completion:*' menu select=2
 zstyle ':completion:*' verbose yes
 
-setopt correct
+unsetopt correct
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 zstyle ':completion:*:*:vim:*:*files' ignored-patterns '*.class'
 ### }}}
