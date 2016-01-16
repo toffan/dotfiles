@@ -93,6 +93,7 @@
 
 " Personal settings
     set shiftwidth=4            " number of spaces for a tab
+    set tabstop=4               " number of spaces for a tab
     set expandtab               " use spaces, not tabs
     set autoindent              " auto indentation
     set number                  " number of the current line
