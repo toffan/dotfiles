@@ -1,0 +1,42 @@
+# ###   CD MV MKDIR   ##########################################################
+
+mkdircd() {
+    dest="${@:$#}"
+    mkdir -p "$@"
+    cd "$dest"
+}
+
+mkdirmv() {
+    dest="${@:$#}"
+    mkdir -p "$dest"
+    mv "$@"
+}
+
+mvcd() {
+    dest="${@:$#}"
+    mv "$@"
+    if [[ -d "$dest" ]]; then
+        cd "$dest"
+    else
+        cd "`dirname "$dest"`"
+    fi
+}
+
+mkdirmvcd() {
+    dest="${@:$#}"
+    mkdir -p "$dest"
+    mv "$@"
+    if [[ -d "$dest" ]]; then
+        cd "$dest"
+    else
+        cd "`dirname "$dest"`"
+    fi
+}
+
+
+# ###   OTHER   ################################################################
+
+dockip() {
+    docker inspect --format '{{ .NetworkSettings.IPAddress }}' "$@"
+}
+
