@@ -1,3 +1,36 @@
+# ###   COMPILER   #############################################################
+
+Warnings() {
+    cc="$1"; shift
+    autoflags=("-Wall" "-Wextra" "-pedantic")
+    flags=()
+    for flag in "$@"; do
+        if [[ "$flag" == "-Wosef" ]]; then
+            autoflags=()
+        else
+            flags+=("$flag")
+        fi
+    done
+    command "$cc" $autoflags $flags
+}
+
+clang++() {
+    Warnings "clang++" "$@"
+}
+
+clang() {
+    Warnings "clang" "$@"
+}
+
+g++() {
+    Warnings "g++" "$@"
+}
+
+gcc() {
+    Warnings "gcc" "$@"
+}
+
+
 # ###   CD MV MKDIR   ##########################################################
 
 mkdircd() {
