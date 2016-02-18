@@ -48,6 +48,7 @@
 
 " For LaTeX
     let g:syntastic_tex_checkers = ['chktek']
+    let g:tex_conceal = ""
 
 " For html and css
     autocmd Filetype htlm,css setlocal shiftwidth=2
