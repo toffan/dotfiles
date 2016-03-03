@@ -6,8 +6,8 @@
 let mapleader = ","
 
 " previous - next && tab change
-    nnoremap <C-Up> gT
-    nnoremap <C-Down> gt
-    nnoremap <C-Left> H
-    nnoremap <C-Right> L
+    nnoremap <A-Up> gT
+    nnoremap <A-Down> gt
+    nnoremap <A-Left> H
+    nnoremap <A-Right> L
 
