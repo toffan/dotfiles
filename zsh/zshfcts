@@ -69,7 +69,30 @@ mkdirmvcd() {
 
 # ###   OTHER   ################################################################
 
+confirm () {
+    echo -n "${1} [y/N] "
+    read -r response
+    case $response in
+        [yY][eE][sS]|[yY])
+            true
+            ;;
+        *)
+            false
+            ;;
+    esac
+}
+
+pacnew() {
+    for file in "$@"; do
+        file=${file%.pacnew}
+        sudo vimdiff "${file}" "${file}.pacnew"
+        confirm "Rotate '${file}'?" && {
+            sudo mv "${file}" "${file}.pacold"
+            sudo mv "${file}.pacnew" "${file}"
+        }
+    done
+}
+
 dockip() {
     docker inspect --format '{{ .NetworkSettings.IPAddress }}' "$@"
 }
-
