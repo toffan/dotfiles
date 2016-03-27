@@ -96,6 +96,8 @@ alias -s pdf="evince "
 
 alias azer='setxkbmap fr bepo'
 alias bépo='setxkbmap fr'
+
+alias pass=' pass'
 ### }}}
 
 
