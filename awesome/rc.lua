@@ -98,7 +98,7 @@ mymainmenu = awful.menu({
         {"restart awesome", awesome.restart},
         {"quit awesome", awesome.quit},
         {"suspend", function()
-            awful.util.spawn_with_shell("i3lock -u -i " .. os.getenv("HOME") .. "/Pictures/Wallpapers/screenlock; systemctl suspend")
+            awful.util.spawn_with_shell("i3lock -u -t -i " .. os.getenv("HOME") .. "/Pictures/Wallpapers/screenlock; systemctl suspend")
         end},
         {"reboot", terminal .. " -e 'systemctl reboot'"},
         {"shutdown", terminal .. " -e 'systemctl poweroff'"},
@@ -541,7 +541,7 @@ globalkeys = awful.util.table.join(
 
     -- Personnal Key Bindings
     awful.key({modkey}, "F1", function()
-        awful.util.spawn("i3lock -u -i " .. os.getenv("HOME") .. "/Pictures/Wallpapers/screenlock")
+        awful.util.spawn("i3lock -u -t -i " .. os.getenv("HOME") .. "/Pictures/Wallpapers/screenlock")
     end),
 
     awful.key({modkey}, "f", function()

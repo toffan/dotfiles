@@ -69,7 +69,7 @@ alias grep='grep --color=auto'
 alias pacman='pacman --color=auto'
 alias objdump='objdump --disassembler-options=intel'
 
-alias i3lock='i3lock -u -i $HOME/Pictures/Wallpapers/screenlock'
+alias i3lock='i3lock -u -t -i $HOME/Pictures/Wallpapers/screenlock'
 alias zzz='i3lock; systemctl suspend'
 
 alias -g :g='| grep'
