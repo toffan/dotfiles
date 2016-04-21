@@ -1,0 +1,53 @@
+- clean: ['~']
+
+- link:
+    # awesome
+    ~/.config/awesome/rc.lua:
+        create: true
+        path: awesome/rc.lua
+    ~/.config/awesome/themes/theme.lua:
+        create: true
+        path: awesome/theme.lua
+
+    # clang
+    ~/.clang-format:
+        create: true
+        path: clang/clang-format
+
+    #terminator
+    ~/.config/terminator/config:
+        create: true
+        path: terminator/config
+
+    # vim
+    ~/.vimrc:
+        create: true
+        path: vim/vimrc
+    ~/.vim/colors/toffan.vim:
+        create: true
+        path: vim/toffan.vim
+    ~/.vim/bundle/Vundle.vim:
+        create: true
+        path: vim/Vundle.vim
+    ~/.vim/bundle/YouCompleteMe/cpp/ycm_extra_conf.py:
+        create: true
+        path: vim/ycm/ycm_extra_conf.py
+    ~/.vim/bundle/YouCompleteMe/Makefile:
+        create: true
+        path: vim/ycm/Makefile
+
+    # vimperator
+    ~/.vimperatorrc:
+        create: true
+        path: vimperator/vimperatorrc
+
+    # zsh
+    ~/.zshrc:
+        create: true
+        path: zsh/zshrc
+    ~/.zshfcts:
+        create: true
+        path: zsh/zshfcts
+    ~/.ls_colors:
+        create: true
+        path: zsh/ls_colors
