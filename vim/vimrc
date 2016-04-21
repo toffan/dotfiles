@@ -100,7 +100,7 @@
     set expandtab               " use spaces, not tabs
     set autoindent              " auto indentation
     set number                  " number of the current line
-    set relativenumber          " relative number of line
+    " set relativenumber          " relative number of line
 
 
 " Move up and down by visual lines not buffer lines.

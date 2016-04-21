@@ -49,31 +49,32 @@ PROMPT="%n@%{$fg_bold[blue]%}%m %{$fg_no_bold[cyan]%}%3~ %{$reset_color%}%# "
 eval `dircolors ~/.ls_colors`
 ### }}}
 
-### ALIASES {{{
+# Personnal functions
 source ~/.zshfcts
 
-alias ls='ls --color=auto'
+### ALIASES {{{
+# auto args
 alias grep='grep --color=auto'
+alias ls='ls --color=auto'
 alias pacman='pacman --color=auto'
-alias objdump='objdump --disassembler-options=intel'
 
 alias i3lock='i3lock -u -t -i $HOME/Pictures/Wallpapers/screenlock'
-alias zzz='i3lock; systemctl suspend'
+alias objdump='objdump --disassembler-options=intel'
 
+# shortcuts
 alias -g :g='| grep'
-alias -g :l='| less'
 alias -g :h='| head'
-alias -g :t='| tail'
-alias -g :w='| wc'
-alias -g :s='| sort'
-alias -g :u='| uniq'
-alias -g :su='| sort | uniq'
 alias -g :hex='| hexdump -C | less'
+alias -g :l='| less'
+alias -g :s='| sort'
+alias -g :su='| sort | uniq'
+alias -g :t='| tail'
+alias -g :u='| uniq'
+alias -g :w='| wc'
 
-alias alert='notify-send --urgency=low'
-alias l='ls'
+alias l='ll -a'
 alias ll='ls -lh --time-style=long-iso'
-alias lll='ll -a'
+
 alias fuck='sudo $(fc -ln -1)'
 alias fucking='sudo'
 
@@ -82,13 +83,12 @@ alias umountdata='sudo umount /media/data'
 alias mountusb='sudo mount /dev/sdc1 /media/usb'
 alias umountusb='sudo umount /media/usb'
 
-alias javadoc='javadoc -encoding UTF-8 -docencoding UTF-8 -charset UTF-8'
-
-alias -s pdf="evince "
-
 alias azer='setxkbmap fr bepo'
 alias bépo='setxkbmap fr'
 
+alias zzz='i3lock; systemctl suspend'
+
+# histignored commands
 alias pass=' pass'
 ### }}}
 
