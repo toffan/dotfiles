@@ -94,7 +94,6 @@ alias pass=' pass'
 
 
 # Environment variables
-export EDITOR=/usr/bin/vim
 export CLASSPATH=.:/usr/share/java/junit.jar
 
 # Autojump

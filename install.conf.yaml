@@ -8,6 +8,9 @@
     ~/.config/awesome/themes/theme.lua:
         create: true
         path: awesome/theme.lua
+    ~/.xinitrc:
+        create: true
+        path: awesome/xinitrc
 
     # clang
     ~/.clang-format:
@@ -48,6 +51,12 @@
     ~/.zshfcts:
         create: true
         path: zsh/zshfcts
+    ~/.zshenv:
+        create: true
+        path: zsh/zshenv
+    ~/.zprofile:
+        create: true
+        path: zsh/zprofile
     ~/.ls_colors:
         create: true
         path: zsh/ls_colors
