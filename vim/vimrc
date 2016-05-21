@@ -65,6 +65,10 @@
 " For vimperatorrc
     autocmd BufNewFile,BufRead .vimperatorrc,vimperatorrc set filetype=vim
 
+" For egg
+    autocmd BufNewFile,BufRead *.egg set filetype=egg
+    autocmd FileType egg setlocal commentstring=--\ %s
+
 " Change keymap for vim-move
     nmap <C-Up>   <Plug>MoveLineUp
     vmap <C-Up>   <Plug>MoveBlockUp

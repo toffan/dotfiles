@@ -38,6 +38,9 @@
     ~/.vim/bundle/YouCompleteMe/Makefile:
         create: true
         path: vim/ycm/Makefile
+    ~/.vim/syntax/egg.vim:
+        create: true
+        path: vim/syntax/egg.vim
 
     # vimperator
     ~/.vimperatorrc:
