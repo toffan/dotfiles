@@ -63,3 +63,9 @@
     ~/.ls_colors:
         create: true
         path: zsh/ls_colors
+    ~/scripts:
+        create: true
+        path: scripts
+    ~/templates:
+        create: true
+        path: templates

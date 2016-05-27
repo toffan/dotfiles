@@ -1,0 +1,80 @@
+#! /bin/bash
+
+author='Benoit \textsc{Lemarchand}'
+date='\today'
+name='rapport'
+title=''
+dir='.'
+
+
+usage() {
+    echo "usage: ${0} [options]"
+    echo ""
+    echo "options:"
+    echo "    -a, --author  set the author. Default to 'Benoit \textsc{Lemarchand}.'"
+    echo "    --date        set the date. Default to '\today'."
+    echo "    -d, --dir     set the directory. Default to '.'."
+    echo "    -h, --help    print this help."
+    echo "    -n, --name    set the filename, without extention. Default to 'rapport'."
+    echo "    -t, --title   set the title. No default."
+}
+
+
+parse() {
+    while [[ "$#" > 0 ]]; do
+        arg="$1"
+        case "$arg" in
+            -a|--author)
+                author="$2"
+                ;;
+            --date)
+                date="$2"
+                ;;
+            -d|--dir)
+                dir="$2"
+                ;;
+            -n|--name)
+                name="$2"
+                ;;
+            -t|--title)
+                title="$2"
+                ;;
+            -h|--help)
+                usage
+                exit 0
+                ;;
+            *)
+                echo "unknown option $1"
+                usage
+                exit 1
+                ;;
+        esac
+        shift 2
+    done
+}
+
+
+work() {
+    mkdir -p "$dir"
+    cd "$dir"
+    cp ~/templates/report/main.tex "${name}.tex"
+    cp ~/templates/report/Makefile .
+    mkdir -p "fig"
+
+    replace '<author>' "$author" '<date>' "$date" '<title>' "$title" -- "${name}.tex"
+    replace '<name>' "$name" -- Makefile
+}
+
+
+debug() {
+    echo "author=$author"
+    echo "date=$date"
+    echo "name=$name"
+    echo "title=$title"
+    echo "dir=$dir"
+}
+
+
+parse "$@"
+# debug
+work
