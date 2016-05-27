@@ -559,10 +559,6 @@ globalkeys = awful.util.table.join(
         awful.util.spawn("rhythmbox")
     end),
 
-    awful.key({modkey}, "t", function()
-        awful.util.spawn("thunar")
-    end),
-
     awful.key({modkey}, "b", function()
         awful.util.spawn("thunderbird")
     end),

@@ -94,7 +94,6 @@ alias pass=' pass'
 
 
 # Environment variables
-export CLASSPATH=.:/usr/share/java/junit.jar
 export PATH="${PATH}:${HOME}/scripts"
 
 # Autojump
