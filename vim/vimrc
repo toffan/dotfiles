@@ -24,6 +24,7 @@
 
         Plugin 'danro/rename.vim'
         Plugin 'airblade/vim-gitgutter'
+        Plugin 'ntpeters/vim-better-whitespace'
 
         call vundle#end()
     end
@@ -101,7 +102,6 @@
 " Coloration
     set t_Co=256
     colorscheme toffan
-    match BadWhitespace /\s\+$\| \+\t/
 
 
 " Personal settings
@@ -126,3 +126,6 @@
 " 80th column rule
     set colorcolumn=81,91,101
     hi ColorColumn ctermbg=235
+
+" Bad whitespaces eradication
+    autocmd BufWritePre * StripWhitespace

@@ -60,6 +60,3 @@ highlight DiffAdd       ctermbg=235 cterm=bold
 highlight DiffDelete    ctermbg=235 cterm=bold
 highlight DiffChange    ctermbg=235 cterm=bold
 highlight DiffText      ctermbg=160 cterm=bold
-
-" Personnal highlighting
-hi BadWhitespace        ctermbg=160  cterm=none
