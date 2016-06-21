@@ -79,9 +79,13 @@
     nmap <C-Down> <Plug>MoveLineDown
     vmap <C-Down> <Plug>MoveBlockDown
 
-" Don't exit visual mode when shifting.
+" Don't exit visual mode...
+    " when shifting.
     vnoremap < <gv
     vnoremap > >gv
+    " when (in/de)creasing numbers
+    vnoremap <C-A> <C-A>gv
+    vnoremap <C-X> <C-X>gv
 
 " Other stuff
     set nocompatible
