@@ -22,6 +22,8 @@
         Plugin 'vim-scripts/django.vim'
         Plugin 'tell-k/vim-autopep8'
 
+        Plugin 'danro/rename.vim'
+
         call vundle#end()
     end
 
