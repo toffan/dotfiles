@@ -23,6 +23,7 @@
         Plugin 'tell-k/vim-autopep8'
 
         Plugin 'danro/rename.vim'
+        Plugin 'airblade/vim-gitgutter'
 
         call vundle#end()
     end
