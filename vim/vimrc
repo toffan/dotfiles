@@ -1,34 +1,40 @@
-" for bundle, various plugins
-    set nocompatible                " be iMproved, required
-    filetype off                    " required
+" {{{ Vundle
+    set nocompatible    " be iMproved, required
+    filetype off        " required
 
     let g:HasVundle = !empty(glob(expand("~") . "/.vim/bundle/Vundle.vim/*"))
     if g:HasVundle
         set rtp+=~/.vim/bundle/Vundle.vim
         call vundle#begin()
 
-        Plugin 'gmarik/Vundle.vim'
-        Plugin 'bling/vim-airline'
-        Plugin 'tpope/vim-sensible'
-        Plugin 'Valloric/YouCompleteMe'
-        Plugin 'SirVer/ultisnips'
-        Plugin 'scrooloose/syntastic'
-        Plugin 'tpope/vim-commentary'
-        Plugin 'tpope/vim-endwise'
-        Plugin 'javacomplete'
-        Plugin 'Yggdroot/indentLine'
-        Plugin 'matze/vim-move'
-        Plugin 'rust-lang/rust.vim'
-        Plugin 'vim-scripts/django.vim'
-        Plugin 'tell-k/vim-autopep8'
+        Plugin 'gmarik/Vundle.vim'              " Manage plugins
+        Plugin 'tpope/vim-sensible'             " Add multiple features
+        Plugin 'danro/rename.vim'               " Enable file renaming
 
-        Plugin 'danro/rename.vim'
-        Plugin 'airblade/vim-gitgutter'
-        Plugin 'ntpeters/vim-better-whitespace'
+        Plugin 'SirVer/ultisnips'               " Use snippets
+        Plugin 'scrooloose/syntastic'           " Compile and print errors on :w
+        Plugin 'Valloric/YouCompleteMe'         " Complete C/C++
+        Plugin 'javacomplete'                   " Complete Java
+        Plugin 'tell-k/vim-autopep8'            " Clean python
+        Plugin 'tpope/vim-commentary'           " Auto (de)comment
+        Plugin 'tpope/vim-endwise'              " Auto end
+        Plugin 'matze/vim-move'                 " Move blocs through code and indentation
+
+        Plugin 'bling/vim-airline'              " Explicit status bar
+        Plugin 'airblade/vim-gitgutter'         " Print git diff into vim
+        Plugin 'Yggdroot/indentLine'            " Explicit indentation
+        Plugin 'ntpeters/vim-better-whitespace' " Spot and remove bad whitespaces
+        Plugin 'google/vim-searchindex'         " Print number of results in a search
+
+        " Coloration
+        Plugin 'rust-lang/rust.vim'             " Rust
+        Plugin 'vim-scripts/django.vim'         " Django
 
         call vundle#end()
     end
+" }}}
 
+" {{{ Languages
 " For C++
     let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm_extra_conf.py'
     let g:syntastic_cpp_compiler_options='-std=c++14 -linclude'
@@ -72,7 +78,9 @@
 
 " For vhdl
     autocmd FileType vhdl setlocal commentstring=--\ %s
+" }}}
 
+" {{{ Remap
 " Change keymap for vim-move
     nmap <C-Up>   <Plug>MoveLineUp
     vmap <C-Up>   <Plug>MoveBlockUp
@@ -86,6 +94,25 @@
     " when (in/de)creasing numbers
     vnoremap <C-A> <C-A>gv
     vnoremap <C-X> <C-X>gv
+
+" Move up and down by visual lines not buffer lines.
+    nnoremap <Up>   gk
+    vnoremap <Up>   gk
+    nnoremap <Down> gj
+    vnoremap <Down> gj
+
+" Shortcuts to insert a line
+    nmap <S-Enter> O<Esc>
+    nmap <CR> o<Esc>
+" }}}
+
+" Personal settings
+    set shiftwidth=4            " number of spaces for a tab
+    set tabstop=4               " number of spaces for a tab
+    set expandtab               " use spaces, not tabs
+    set autoindent              " auto indentation
+    set number                  " number of the current line
+    set foldmethod=marker       " fold on triple {
 
 " Other stuff
     set nocompatible
@@ -103,29 +130,10 @@
     filetype plugin indent on
     syntax on
 
+" {{{ Cosmetic
 " Coloration
     set t_Co=256
     colorscheme toffan
-
-
-" Personal settings
-    set shiftwidth=4            " number of spaces for a tab
-    set tabstop=4               " number of spaces for a tab
-    set expandtab               " use spaces, not tabs
-    set autoindent              " auto indentation
-    set number                  " number of the current line
-    " set relativenumber          " relative number of line
-
-
-" Move up and down by visual lines not buffer lines.
-    nnoremap <Up>   gk
-    vnoremap <Up>   gk
-    nnoremap <Down> gj
-    vnoremap <Down> gj
-
-" Shortcuts to insert a line
-    nmap <S-Enter> O<Esc>
-    nmap <CR> o<Esc>
 
 " 80th column rule
     set colorcolumn=81,91,101
@@ -133,3 +141,4 @@
 
 " Bad whitespaces eradication
     autocmd BufWritePre * StripWhitespace
+" }}}
