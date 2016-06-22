@@ -27,6 +27,7 @@
         Plugin 'google/vim-searchindex'         " Print number of results in a search
 
         " Coloration
+        Plugin 'ekalinin/Dockerfile.vim'        " Dockerfile
         Plugin 'rust-lang/rust.vim'             " Rust
         Plugin 'vim-scripts/django.vim'         " Django
 
