@@ -63,6 +63,9 @@
     ~/.ls_colors:
         create: true
         path: zsh/ls_colors
+    ~/.git-prompt.sh:
+        create: true
+        path: zsh/zsh-git-prompt/zshrc.sh
     ~/scripts:
         create: true
         path: scripts
