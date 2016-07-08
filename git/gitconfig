@@ -1,0 +1,31 @@
+[user]
+	email = benoit.lemarchand@inpt.fr
+	name = toffan
+
+[push]
+	default = simple
+
+[core]
+    editor = vim
+
+[color]
+    ui = true
+
+[diff]
+    tool = vimdiff
+
+[github]
+    user = toffan
+
+[log]
+	decorate = short
+
+[pull]
+    rebase = preserve
+
+[alias]
+    co = checkout
+    st = status
+    last = log -1 HEAD
+    gr = log --graph --oneline
+    graph = log --graph --pretty

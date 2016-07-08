@@ -17,6 +17,11 @@
         create: true
         path: clang/clang-format
 
+    # git
+    ~/.gitconfig:
+        create: true
+        path: git/gitconfig
+
     #terminator
     ~/.config/terminator/config:
         create: true
