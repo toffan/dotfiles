@@ -18,7 +18,7 @@ AlwaysBreakBeforeMultilineStrings: false
 AlwaysBreakTemplateDeclarations: true
 BinPackArguments: true
 BinPackParameters: true
-BreakBeforeBinaryOperators: false
+BreakBeforeBinaryOperators: true
 BreakBeforeBraces: Attach
 BreakBeforeTernaryOperators: true
 BreakConstructorInitializersBeforeComma: false
@@ -35,7 +35,7 @@ ForEachMacros: [ foreach, Q_FOREACH, BOOST_FOREACH ]
 IndentCaseLabels: false
 IndentWidth: 4
 IndentWrappedFunctionNames: false
-KeepEmptyLinesAtTheStartOfBlocks: true
+KeepEmptyLinesAtTheStartOfBlocks: false
 MacroBlockBegin: ''
 MacroBlockEnd: ''
 MaxEmptyLinesToKeep: 2
