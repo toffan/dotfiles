@@ -42,7 +42,7 @@
     let g:ycm_complete_in_comments=1
     let g:ycm_confirm_extra_conf=0
     set matchpairs+=<:>
-    autocmd FileType c,cpp setlocal comments-=:// comments+=f://
+    autocmd FileType c,cpp setlocal commentstring=//\ %s
     autocmd FileType c,cpp setlocal textwidth=0
 
     set path+=include
