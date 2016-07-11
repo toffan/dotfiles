@@ -48,12 +48,15 @@ hi Special              ctermfg=26   cterm=none
 
 hi Todo                 ctermfg=245  cterm=none
 
+hi clear SpellBad
+hi SpellBad             ctermfg=203 cterm=underline
+
 " Syntastic highlighting
 hi SignColumn           ctermbg=none
 hi SyntasticErrorSign   ctermfg=160
-hi SyntasticWarningSign ctermfg=162
-hi SyntasticError       ctermfg=232  ctermbg=160
-hi SyntasticWarning     ctermfg=232  ctermbg=162
+hi SyntasticWarningSign ctermfg=202
+hi SyntasticError       ctermfg=160 cterm=underline
+hi SyntasticWarning     ctermfg=202 cterm=underline
 
 " Vimdiff highlighting
 highlight DiffAdd       ctermbg=235 cterm=bold
