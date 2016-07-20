@@ -63,3 +63,7 @@ hi DiffAdd              ctermbg=235  cterm=bold
 hi DiffDelete           ctermbg=235  cterm=bold
 hi DiffChange           ctermbg=235  cterm=bold
 hi DiffText             ctermbg=160  cterm=bold
+
+" Git
+hi diffAdded            ctermfg=2
+hi diffRemoved          ctermfg=1
