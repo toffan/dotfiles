@@ -55,11 +55,11 @@ hi SpellBad             ctermfg=203 cterm=underline
 hi SignColumn           ctermbg=none
 hi SyntasticErrorSign   ctermfg=160
 hi SyntasticWarningSign ctermfg=202
-hi SyntasticError       ctermfg=160 cterm=underline
-hi SyntasticWarning     ctermfg=202 cterm=underline
+hi SyntasticError       ctermfg=160  cterm=underline
+hi SyntasticWarning     ctermfg=202  cterm=underline
 
 " Vimdiff
-highlight DiffAdd       ctermbg=235 cterm=bold
-highlight DiffDelete    ctermbg=235 cterm=bold
-highlight DiffChange    ctermbg=235 cterm=bold
-highlight DiffText      ctermbg=160 cterm=bold
+hi DiffAdd              ctermbg=235  cterm=bold
+hi DiffDelete           ctermbg=235  cterm=bold
+hi DiffChange           ctermbg=235  cterm=bold
+hi DiffText             ctermbg=160  cterm=bold
