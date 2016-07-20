@@ -48,9 +48,6 @@ hi Special              ctermfg=26   cterm=none
 
 hi Todo                 ctermfg=245  cterm=none
 
-hi clear SpellBad
-hi SpellBad             ctermfg=203 cterm=underline
-
 " Syntastic
 hi SignColumn           ctermbg=none
 hi SyntasticErrorSign   ctermfg=160
@@ -67,3 +64,7 @@ hi DiffText             ctermbg=160  cterm=bold
 " Git
 hi diffAdded            ctermfg=2
 hi diffRemoved          ctermfg=1
+
+" Spell
+hi clear SpellBad
+hi SpellBad             ctermfg=203  cterm=underline
