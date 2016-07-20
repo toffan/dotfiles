@@ -28,7 +28,7 @@ hi LineNr               ctermfg=242  cterm=none
 hi CursorLineNr         ctermfg=202  cterm=none
 hi Visual               ctermbg=232  cterm=reverse
 
-" Syntax highlighting
+" Syntax
 hi Comment              ctermfg=244  cterm=none
 
 hi Constant             ctermfg=25   cterm=none
@@ -51,14 +51,14 @@ hi Todo                 ctermfg=245  cterm=none
 hi clear SpellBad
 hi SpellBad             ctermfg=203 cterm=underline
 
-" Syntastic highlighting
+" Syntastic
 hi SignColumn           ctermbg=none
 hi SyntasticErrorSign   ctermfg=160
 hi SyntasticWarningSign ctermfg=202
 hi SyntasticError       ctermfg=160 cterm=underline
 hi SyntasticWarning     ctermfg=202 cterm=underline
 
-" Vimdiff highlighting
+" Vimdiff
 highlight DiffAdd       ctermbg=235 cterm=bold
 highlight DiffDelete    ctermbg=235 cterm=bold
 highlight DiffChange    ctermbg=235 cterm=bold
