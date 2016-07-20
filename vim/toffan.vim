@@ -27,6 +27,7 @@ hi NonText              ctermfg=242  cterm=none
 hi LineNr               ctermfg=242  cterm=none
 hi CursorLineNr         ctermfg=202  cterm=none
 hi Visual               ctermbg=232  cterm=reverse
+hi Folded               ctermfg=187  ctermbg=234
 
 " Syntax
 hi Comment              ctermfg=244  cterm=none
