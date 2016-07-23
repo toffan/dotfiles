@@ -1,4 +1,4 @@
-### HISTFILE {{{
+# HISTFILE {{{
 HISTFILE=~/.histfile
 HISTSIZE=10000
 SAVEHIST=10000
@@ -7,10 +7,9 @@ setopt histignorealldups
 setopt histignorespace
 setopt appendhistory
 setopt sharehistory
-### }}}
+# }}}
 
-
-### OPTIONS
+# OPTIONS {{{
 setopt nomatch
 setopt autocd
 setopt extendedglob
@@ -21,10 +20,9 @@ unsetopt beep
 unsetopt notify
 
 REPORTTIME=2
-### }}}
+# }}}
 
-
-### COMPLETION {{{
+# COMPLETION {{{
 zstyle :compinstall filename '$HOME/.zshrc'
 autoload -Uz compinit
 compinit
@@ -35,15 +33,13 @@ zstyle ':completion:*' verbose yes
 unsetopt correct
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 zstyle ':completion:*:*:vim:*:*files' ignored-patterns '*.class'
-### }}}
+# }}}
 
-
-### COLORS {{{
-# Set prompt
+# PROMPT {{{
 export TERM=xterm-256color
-autoload -U colors
-colors
-# {{{ zsh git prompt
+autoload -U colors && colors
+
+# zsh git prompt {{{
 source ~/.git-prompt.sh
 ZSH_THEME_GIT_PROMPT_PREFIX="["
 ZSH_THEME_GIT_PROMPT_SUFFIX="] "
@@ -57,14 +53,10 @@ ZSH_THEME_GIT_PROMPT_AHEAD=" %{$fg[blue]+%G%}"
 # }}}
 PROMPT="%{$fg_bold[white]%}%n%{$reset_color%}@%m %{$fg_bold[white]%}%3~%{$reset_color%} "'$(git_super_status)'"%# "
 
-# Set ls colors
-eval `dircolors ~/.ls_colors`
-### }}}
 
-# Personnal functions
-source ~/.zshfcts
+# }}}
 
-### ALIASES {{{
+# ALIASES {{{
 # auto args
 alias grep='grep --color=auto'
 alias ls='ls --color=auto'
@@ -102,13 +94,19 @@ alias zzz='i3lock; systemctl suspend'
 
 # histignored commands
 alias pass=' pass'
-### }}}
 
+# personal functions
+source ~/.zshfcts
+# }}}
+
+# MISCELLANEOUS {{{
+# Set ls colors
+eval `dircolors ~/.ls_colors`
 
 # Environment variables
 export PATH="${PATH}:${HOME}/scripts:${HOME}/scripts/private"
 
-# Autojump
+# Activate autojump
 [[ -s /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh
 
 # Keybindings
@@ -136,3 +134,4 @@ key[PageDown]=${terminfo[knp]}
 [[ -n "${key[Down]}"    ]]  && bindkey  "${key[Down]}"    down-line-or-history
 [[ -n "${key[Left]}"    ]]  && bindkey  "${key[Left]}"    backward-char
 [[ -n "${key[Right]}"   ]]  && bindkey  "${key[Right]}"   forward-char
+# }}}
