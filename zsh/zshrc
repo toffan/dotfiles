@@ -93,6 +93,7 @@ alias -g :w='| wc'
 
 alias l='ll -a'
 alias ll='ls -lh --time-style=long-iso'
+alias vi='vim'
 
 alias fuck='sudo $(fc -ln -1)'
 alias fucking='sudo'
