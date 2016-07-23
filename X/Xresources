@@ -1,0 +1,65 @@
+! URxvt {{{
+URxvt*termName:     urxvt-256color
+URxvt*scrollBar:    false
+URxvt*borderless:   true
+URxvt*transparent:  true
+URxvt*shading:      30
+URxvt.cursorBlink:  true
+
+! Font {{{
+URxvt.font:             xft:Liberation Mono:style=Regular:size=11
+URxvt.boldFont:         xft:Liberation Mono:style=Bold
+URxvt.italicFont:       xft:Liberation Mono:style=Oblique
+URxvt.boldItalicFont:   xft:Liberation Mono:style=Bold Oblique
+URxvt.letterSpace:      -2
+! }}}
+
+! Extensions {{{
+URxvt.perl-ext-common:  default,tabbedex,resize-font,vtwheel
+
+! tabbed {{{
+URxvt.tabbed.autohide:      true
+URxvt.tabbed.title-bg:      -1
+URxvt.tabbed.title-fg:      14
+URxvt.tabbed.tabbar-fg:     14
+URxvt.tabbed.tabbar-bg:     -1
+URxvt.tabbed.tab-fg:        15
+URxvt.tabbed.tab-bg:        -1
+! }}}
+
+URxvt.resize-font.smaller:  C-Down
+URxvt.resize-font.bigger:   C-Up
+
+URxvt.url-launcher:         firefox
+! }}}
+
+! Colors {{{
+URxvt*background:   0
+URxvt*foreground:   7
+! black
+URxvt*color0:       #000000
+URxvt*color8:       #686868
+! red
+URxvt*color1:       #a30000
+URxvt*color9:       #bf2020
+! green
+URxvt*color2:       #3e7b04
+URxvt*color10:      #6eb529
+! yellow
+URxvt*color3:       #9d8000
+URxvt*color11:      #cabb3f
+! blue
+URxvt*color4:       #295183
+URxvt*color12:      #5b7fa6
+! purple
+URxvt*color5:       #5d4062
+URxvt*color13:      #8a6586
+! cyan
+URxvt*color6:       #047a7b
+URxvt*color14:      #29b5b5
+! white
+URxvt*color7:       #888888
+URxvt*color15:      #ffffff
+! }}}
+
+! }}}

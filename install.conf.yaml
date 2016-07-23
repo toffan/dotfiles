@@ -8,9 +8,6 @@
     ~/.config/awesome/themes/theme.lua:
         create: true
         path: awesome/theme.lua
-    ~/.xinitrc:
-        create: true
-        path: awesome/xinitrc
 
     # clang
     ~/.clang-format:
@@ -51,6 +48,14 @@
     ~/.vimperatorrc:
         create: true
         path: vimperator/vimperatorrc
+
+    # X
+    ~/.xinitrc:
+        create: true
+        path: X/xinitrc
+    ~/.Xresources:
+        create: true
+        path: X/Xresources
 
     # zsh
     ~/.zshrc:
