@@ -1,3 +1,4 @@
+-- Required libraries {{{
 -- Standard awesome library
 local gears = require("gears")
 local awful = require("awful")
@@ -12,9 +13,9 @@ local naughty = require("naughty")
 local menubar = require("menubar")
 -- Vicious
 local vicious = require("vicious")
+-- }}}
 
-
--- {{{Error handling
+-- Error handling {{{
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
 if awesome.startup_errors then
@@ -42,9 +43,9 @@ do
         in_error = false
     end)
 end
---}}}
+-- }}}
 
--- {{{Variable definitions
+-- Variable definitions {{{
 -- Themes define colours, icons, and wallpapers
 beautiful.init(os.getenv("HOME") .. "/.config/awesome/themes/toffan-theme/theme.lua")
 
@@ -69,17 +70,17 @@ local layouts = {
     awful.layout.suit.max.fullscreen,
     awful.layout.suit.magnifier
 }
---}}}
+-- }}}
 
--- {{{Wallpaper
+-- Wallpaper {{{
 if beautiful.wallpaper then
     for s = 1, screen.count() do
         gears.wallpaper.centered(beautiful.wallpaper, s, "black")
     end
 end
---}}}
+-- }}}
 
--- {{{Tags
+-- Tags {{{
 -- Define a tag table which hold all screen tags.
 tags = {
     names = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b"},
@@ -89,9 +90,9 @@ for s = 1, screen.count() do
     -- Each screen has its own tag table.
     tags[s] = awful.tag(tags.names, s, tags.layout)
 end
---}}}
+-- }}}
 
--- {{{Menu
+-- Menu {{{
 
 mymainmenu = awful.menu({
     items = {
@@ -112,9 +113,9 @@ mylauncher = awful.widget.launcher({
 
 -- Menubar configuration
 menubar.utils.terminal = terminal -- Set the terminal for applications that require it
---}}}
+-- }}}
 
--- {{{Wibox
+-- Wibox {{{
 separator = wibox.widget.textbox(' | ')
 padding = wibox.widget.textbox('  ')
 
@@ -398,9 +399,9 @@ for s = 1, screen.count() do
 
     mywibox[s]:set_widget(layout)
 end
---}}}
+-- }}}
 
--- {{{Mouse bindings
+-- Mouse bindings {{{
 root.buttons(awful.util.table.join(
         awful.button({}, 3, function()
             mymainmenu:toggle()
@@ -408,9 +409,9 @@ root.buttons(awful.util.table.join(
         awful.button({}, 4, awful.tag.viewnext),
         awful.button({}, 5, awful.tag.viewprev)
 ))
---}}}
+-- }}}
 
--- {{{Key bindings
+-- Key bindings {{{
 Numeric_Pad = {"KP_End", "KP_Down", "KP_Next", "KP_Left", "KP_Begin", "KP_Right", "KP_Home", "KP_Up", "KP_Prior"}
 
 globalkeys = awful.util.table.join(
@@ -700,9 +701,9 @@ clientbuttons = awful.util.table.join(
 
 -- Set keys
 root.keys(globalkeys)
---}}}
+-- }}}
 
--- {{{Rules
+-- Rules {{{
 awful.rules.rules = {
     -- All clients will match this rule.
     {
@@ -758,9 +759,9 @@ awful.rules.rules = {
         properties = {tag = tags[1][11]}
     },
 }
---}}}
+-- }}}
 
--- {{{Signals
+-- Signals {{{
 -- Signal function to execute when a new client appears.
 client.connect_signal("manage", function(c, startup)
     -- Enable sloppy focus
@@ -839,4 +840,4 @@ client.connect_signal("unfocus", function(c)
     c.border_color = beautiful.border_normal
 end)
 
---}}}
+-- }}}
