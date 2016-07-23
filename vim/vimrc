@@ -114,6 +114,7 @@
     set autoindent              " auto indentation
     set number                  " number of the current line
     set foldmethod=marker       " fold on triple {
+    set gdefault
 
 " Other stuff
     set nocompatible
