@@ -1,3 +1,6 @@
+# CONFIGURATION
+DEFAULT_USER='toffan'
+
 # HISTFILE {{{
 HISTFILE=~/.histfile
 HISTSIZE=10000
@@ -51,9 +54,21 @@ ZSH_THEME_GIT_PROMPT_CHANGED="%{$fg[red]%}%{●%G%}"
 ZSH_THEME_GIT_PROMPT_BEHIND=" %{$fg[blue]-%G%}"
 ZSH_THEME_GIT_PROMPT_AHEAD=" %{$fg[blue]+%G%}"
 # }}}
-PROMPT="%{$fg_bold[white]%}%n%{$reset_color%}@%m %{$fg_bold[white]%}%3~%{$reset_color%} "'$(git_super_status)'"%# "
 
+# context prompt {{{
+context_prompt() {
+    if [[ "$USERNAME" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
+        if [[ "$USERNAME" == "root" ]]; then
+            local col="$fg_bold[red]"
+        else
+            local col="$fg_bold[white]"
+        fi
+        echo "%{$col%}%n%{$reset_color%}@%m "
+    fi
+}
+# }}}
 
+PROMPT='$(context_prompt)'"%{$fg_bold[white]%}%3~%{$reset_color%} "'$(git_super_status)'"%# "
 # }}}
 
 # ALIASES {{{
