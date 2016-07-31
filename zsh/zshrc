@@ -124,6 +124,8 @@ export PATH="${PATH}:${HOME}/scripts:${HOME}/scripts/private"
 
 # Activate autojump
 [[ -s /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh
+# Activate virtualenv-wrapper
+[[ -s /usr/bin/virtualenvwrapper.sh ]] && source /usr/bin/virtualenvwrapper.sh
 
 # Keybindings
 bindkey -e
