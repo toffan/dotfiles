@@ -1,7 +1,6 @@
 " Set GUI
     hi StatusLine color: black;
     set gui=nonavigation
-    set gui=nobookmarks
 
 let mapleader = ","
 
