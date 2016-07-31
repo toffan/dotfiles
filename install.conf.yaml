@@ -8,6 +8,9 @@
     ~/.config/awesome/themes/theme.lua:
         create: true
         path: awesome/theme.lua
+    ~/.config/awesome/lain:
+        create: true
+        path: awesome/lain
 
     # clang
     ~/.clang-format:
