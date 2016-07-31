@@ -35,7 +35,7 @@ zstyle ':completion:*' verbose yes
 
 unsetopt correct
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-zstyle ':completion:*:*:vim:*:*files' ignored-patterns '*.class'
+zstyle ':completion:*:*:vim:*:*files' ignored-patterns '*.(class|pyc)'
 # }}}
 
 # PROMPT {{{
