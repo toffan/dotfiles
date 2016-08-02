@@ -21,9 +21,9 @@ local lain    = require("lain")
 -- another config (This code will only ever execute for the fallback config)
 if awesome.startup_errors then
     naughty.notify({
-            preset = naughty.config.presets.critical,
-            title = "Oops, there were errors during startup!",
-            text = awesome.startup_errors
+        preset = naughty.config.presets.critical,
+        title = "Oops, there were errors during startup!",
+        text = awesome.startup_errors
     })
 end
 
@@ -38,9 +38,10 @@ do
         in_error = true
 
         naughty.notify({
-                preset = naughty.config.presets.critical,
-                title = "Oops, an error happened!",
-                text = err})
+            preset = naughty.config.presets.critical,
+            title = "Oops, an error happened!",
+            text = err
+        })
         in_error = false
     end)
 end
@@ -51,10 +52,11 @@ end
 beautiful.init(os.getenv("HOME") .. "/.config/awesome/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "terminator"
-editor = os.getenv("EDITOR")
-editor_cmd = terminal .. " -e " .. editor
-modkey = "Mod4"
+altkey      = "Mod1"
+modkey      = "Mod4"
+terminal    = "terminator"
+editor      = os.getenv("EDITOR")
+editor_cmd  = terminal .. " -e " .. editor
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 local layouts = {
@@ -73,14 +75,6 @@ local layouts = {
 }
 -- }}}
 
--- Wallpaper {{{
-if beautiful.wallpaper then
-    for s = 1, screen.count() do
-        gears.wallpaper.centered(beautiful.wallpaper, s, "black")
-    end
-end
--- }}}
-
 -- Tags {{{
 -- Define a tag table which hold all screen tags.
 tags = {
@@ -93,7 +87,13 @@ for s = 1, screen.count() do
 end
 -- }}}
 
--- Menu {{{
+-- Wallpaper {{{
+if beautiful.wallpaper then
+    for s = 1, screen.count() do
+        gears.wallpaper.centered(beautiful.wallpaper, s, "black")
+    end
+end
+-- }}}
 
 mymainmenu = awful.menu({
     items = {
@@ -108,8 +108,8 @@ mymainmenu = awful.menu({
 })
 
 mylauncher = awful.widget.launcher({
-        image = beautiful.awesome_icon,
-        menu = mymainmenu
+    image = beautiful.awesome_icon,
+    menu = mymainmenu
 })
 
 -- Menubar configuration
@@ -416,6 +416,7 @@ root.buttons(awful.util.table.join(
 Numeric_Pad = {"KP_End", "KP_Down", "KP_Next", "KP_Left", "KP_Begin", "KP_Right", "KP_Home", "KP_Up", "KP_Prior"}
 
 globalkeys = awful.util.table.join(
+    -- Tag browsing
     awful.key({modkey}, "Left",
         awful.tag.viewprev
     ),
