@@ -429,20 +429,36 @@ globalkeys = awful.util.table.join(
         end
     end),
 
-    awful.key({modkey}, "j", function()
-        awful.client.focus.byidx(1)
-        if client.focus then
-            client.focus:raise()
-        end
+    awful.key({altkey, modkey}, "Left", function()
+        lain.util.tag_view_nonempty(-1)
     end),
 
-    awful.key({modkey}, "k", function()
-        awful.client.focus.byidx(-1)
-        if client.focus then
-            client.focus:raise()
-        end
+    awful.key({altkey, modkey}, "Right", function()
+        lain.util.tag_view_nonempty(1)
     end),
 
+    -- Client focus
+    awful.key({ modkey }, "j", function()
+        awful.client.focus.bydirection("down")
+        if client.focus then client.focus:raise() end
+    end),
+
+    awful.key({ modkey }, "k",  function()
+        awful.client.focus.bydirection("up")
+        if client.focus then client.focus:raise() end
+    end),
+
+    awful.key({ modkey }, "h", function()
+        awful.client.focus.bydirection("left")
+        if client.focus then client.focus:raise() end
+    end),
+
+    awful.key({ modkey }, "l", function()
+        awful.client.focus.bydirection("right")
+        if client.focus then client.focus:raise() end
+    end),
+
+    -- Show menu
     awful.key({modkey}, "w", function()
         mymainmenu:show()
     end),
@@ -480,7 +496,7 @@ globalkeys = awful.util.table.join(
         awesome.restart
     ),
 
-    awful.key({modkey, "Shift"}, "q",
+    awful.key({modkey, "Control"}, "q",
         awesome.quit
     ),
 
@@ -572,17 +588,7 @@ globalkeys = awful.util.table.join(
         vicious.force({volwidget,})
     end),
 
-    awful.key({modkey}, "F4", function()
-        awful.util.spawn("amixer -q sset Master 2%+")
-        vicious.force({volwidget,})
-    end),
-
     awful.key({}, "XF86AudioLowerVolume", function()
-        awful.util.spawn("amixer -q sset Master 2%-")
-        vicious.force({volwidget,})
-    end),
-
-    awful.key({modkey}, "F3", function()
         awful.util.spawn("amixer -q sset Master 2%-")
         vicious.force({volwidget,})
     end),
@@ -607,25 +613,27 @@ globalkeys = awful.util.table.join(
         vicious.force({volwidget,})
     end),
 
+    awful.key({modkey}, "F4", function()
+        awful.util.spawn("amixer -q sset Master 2%+")
+        vicious.force({volwidget,})
+    end),
+
+    awful.key({modkey}, "F3", function()
+        awful.util.spawn("amixer -q sset Master 2%-")
+        vicious.force({volwidget,})
+    end),
+
     awful.key({modkey}, "n", function()
         awful.util.spawn("mocp --next")
     end)
 )
 
 clientkeys = awful.util.table.join(
-    -- awful.key({modkey}, "f", function(c)
-    --     c.fullscreen = not c.fullscreen
-    -- end),
-
-    awful.key({modkey, "Shift"}, "c", function(c)
+    awful.key({modkey}, "c", function(c)
         c:kill()
     end),
 
-    -- awful.key({modkey}, "c", function(c)
-    --     c:kill()
-    -- end),
-
-    awful.key({"Mod1"}, "F4", function(c)
+    awful.key({altkey}, "F4", function(c)
         c:kill()
     end),
 
@@ -722,11 +730,6 @@ awful.rules.rules = {
     },
 
     {
-        rule = {class = "pinentry"},
-        properties = {floating = true}
-    },
-
-    {
         rule = {class = "gimp"},
         properties = {floating = true}
     },
@@ -749,12 +752,12 @@ awful.rules.rules = {
 
     {
         rule = {class = "Pavucontrol"},
-        properties = {tag = tags[1][11]}
+        properties = {tag = tags[1][9]}
     },
 
     {
         rule = {class = "Rhythmbox"},
-        properties = {tag = tags[1][11]}
+        properties = {tag = tags[1][9]}
     },
 }
 -- }}}
