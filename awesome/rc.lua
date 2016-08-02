@@ -14,6 +14,7 @@ local menubar   = require("menubar")
 -- Miscellaneous
 local vicious = require("vicious")
 local lain    = require("lain")
+local menugen = require("menugen")
 -- }}}
 
 -- Error handling {{{
@@ -61,25 +62,18 @@ editor_cmd  = terminal .. " -e " .. editor
 -- Table of layouts to cover with awful.layout.inc, order matters.
 local layouts = {
     awful.layout.suit.floating,
-    awful.layout.suit.tile,
-    awful.layout.suit.tile.left,
-    awful.layout.suit.tile.bottom,
-    awful.layout.suit.tile.top,
-    awful.layout.suit.fair,
-    awful.layout.suit.fair.horizontal,
-    -- awful.layout.suit.spiral,
-    -- awful.layout.suit.spiral.dwindle,
+    lain.layout.uselesstile,
     awful.layout.suit.max,
-    awful.layout.suit.max.fullscreen,
-    awful.layout.suit.magnifier
+    lain.layout.uselesstile.top,
+    awful.layout.suit.fair,
 }
 -- }}}
 
 -- Tags {{{
 -- Define a tag table which hold all screen tags.
 tags = {
-    names = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b"},
-    layout = {layouts[6], layouts[2], layouts[6], layouts[6], layouts[6], layouts[6], layouts[6], layouts[6], layouts[6], layouts[6], layouts[6]}
+    names = {"1", "2", "3", "4", "5", "6", "7", "8", "9",},
+    layout = {layouts[2], layouts[2], layouts[2], layouts[2], layouts[2], layouts[2], layouts[2], layouts[2], layouts[2],},
 }
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
@@ -95,17 +89,19 @@ if beautiful.wallpaper then
 end
 -- }}}
 
-mymainmenu = awful.menu({
-    items = {
-        {"restart awesome", awesome.restart},
-        {"quit awesome", awesome.quit},
-        {"suspend", function()
-            awful.util.spawn_with_shell("i3lock -u -t -i " .. os.getenv("HOME") .. "/Pictures/Wallpapers/screenlock; systemctl suspend")
-        end},
-        {"reboot", terminal .. " -e 'systemctl reboot'"},
-        {"shutdown", terminal .. " -e 'systemctl poweroff'"},
-    }
-})
+-- Menu {{{
+items = menugen.build_menu()
+items[#items + 1]= {"awesome", {
+    {"restart awesome", awesome.restart},
+    {"quit awesome", awesome.quit},
+    {"suspend", function()
+        awful.util.spawn_with_shell("i3lock -u -t -i " .. os.getenv("HOME") .. "/Pictures/Wallpapers/screenlock; systemctl suspend")
+    end},
+    {"reboot", terminal .. " -e 'systemctl reboot'"},
+    {"shutdown", terminal .. " -e 'systemctl poweroff'"},
+}, "/usr/share/awesome/icons/awesome16.png"}
+
+mymainmenu = awful.menu({items = items})
 
 mylauncher = awful.widget.launcher({
     image = beautiful.awesome_icon,
