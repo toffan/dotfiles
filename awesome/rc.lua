@@ -11,8 +11,9 @@ local beautiful = require("beautiful")
 -- Notification library
 local naughty   = require("naughty")
 local menubar   = require("menubar")
--- Vicious
+-- Miscellaneous
 local vicious = require("vicious")
+local lain    = require("lain")
 -- }}}
 
 -- Error handling {{{
@@ -47,7 +48,7 @@ end
 
 -- Variable definitions {{{
 -- Themes define colours, icons, and wallpapers
-beautiful.init(os.getenv("HOME") .. "/.config/awesome/themes/toffan-theme/theme.lua")
+beautiful.init(os.getenv("HOME") .. "/.config/awesome/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "terminator"
