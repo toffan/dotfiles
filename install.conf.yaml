@@ -11,6 +11,9 @@
     ~/.config/awesome/lain:
         create: true
         path: awesome/lain
+    ~/.config/awesome/menugen:
+        create: true
+        path: awesome/menugen
     ~/.config/awesome/icons:
         create: true
         path: awesome/icons
