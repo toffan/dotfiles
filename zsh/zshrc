@@ -120,7 +120,7 @@ source ~/.zshfcts
 eval `dircolors ~/.ls_colors`
 
 # Environment variables
-export PATH="${PATH}:${HOME}/scripts:${HOME}/scripts/private"
+export PATH="${PATH}:${HOME}/bin:${HOME}/bin/private"
 
 # Activate autojump
 [[ -s /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh

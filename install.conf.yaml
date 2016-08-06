@@ -85,9 +85,9 @@
     ~/.git-prompt.sh:
         create: true
         path: zsh/zsh-git-prompt/zshrc.sh
-    ~/scripts:
+    ~/bin:
         create: true
-        path: scripts
+        path: bin
     ~/templates:
         create: true
         path: templates
