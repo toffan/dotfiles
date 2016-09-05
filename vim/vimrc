@@ -102,9 +102,11 @@
     nnoremap <Down> gj
     vnoremap <Down> gj
 
-" Shortcuts to insert a line
+" General remap
     nmap <S-Enter> O<Esc>
     nmap <CR> o<Esc>
+    nmap zz [s
+    map Y y$
 " }}}
 
 " Personal settings
