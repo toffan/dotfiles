@@ -47,7 +47,8 @@
 
     set path+=include
 
-    map <C-K> :pyf /usr/share/clang/clang-format.py<cr>
+    nmap <C-K> :%pyf /usr/share/clang/clang-format.py<cr>
+    vmap <C-K> :pyf /usr/share/clang/clang-format.py<cr>
 
 " For Python
     let g:syntastic_python_checkers = ['flake8']
