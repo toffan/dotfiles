@@ -1,2 +1,3 @@
 [[ -f ~/.Xresources ]] && xrdb -I$HOME ~/.Xresources
+systemctl --user start xfluxd
 exec awesome
