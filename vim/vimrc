@@ -117,6 +117,7 @@
     set autoindent              " auto indentation
     set number                  " number of the current line
     set foldmethod=marker       " fold on triple {
+    set conceallevel=0          " Do not hide characters
     set gdefault
 
 " Other stuff
