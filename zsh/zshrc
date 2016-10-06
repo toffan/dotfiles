@@ -99,11 +99,6 @@ alias vi='vim'
 alias fuck='sudo $(fc -ln -1)'
 alias fucking='sudo'
 
-alias mountdata='sudo mount /dev/sdb1 /media/data'
-alias umountdata='sudo umount /media/data'
-alias mountusb='sudo mount /dev/sdc1 /media/usb'
-alias umountusb='sudo umount /media/usb'
-
 alias azer='setxkbmap fr bepo'
 alias bépo='setxkbmap fr'
 
