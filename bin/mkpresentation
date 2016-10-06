@@ -1,0 +1,94 @@
+#! /bin/bash
+
+author='Benoit \textsc{Lemarchand}'
+date='\today'
+name='présentation'
+title=''
+dir='.'
+url=''
+institute=''
+
+
+usage() {
+    echo "usage: ${0} [options]"
+    echo ""
+    echo "options:"
+    echo "    -a, --author      set the author. Default to 'Benoit \textsc{Lemarchand}.'"
+    echo "    --date            set the date. Default to '\today'."
+    echo "    -d, --dir         set the directory. Default to '.'."
+    echo "    -i, --institute   set the institute. No default."
+    echo "    -h, --help        print this help."
+    echo "    -n, --name        set the filename, without extention. Default to 'présentation'."
+    echo "    -u, --url         set the reference url. No default."
+    echo "    -t, --title       set the title. No default."
+}
+
+
+parse() {
+    while [[ "$#" > 0 ]]; do
+        arg="$1"
+        case "$arg" in
+            -a|--author)
+                author="$2"
+                ;;
+            --date)
+                date="$2"
+                ;;
+            -d|--dir)
+                dir="$2"
+                ;;
+            -i|--institute)
+                institute="$2"
+                ;;
+            -n|--name)
+                name="$2"
+                ;;
+            -u|--url)
+                url="$2"
+                ;;
+            -t|--title)
+                title="$2"
+                ;;
+            -h|--help)
+                usage
+                exit 0
+                ;;
+            *)
+                echo "unknown option $1"
+                usage
+                exit 1
+                ;;
+        esac
+        shift 2
+    done
+}
+
+
+work() {
+    mkdir -p "$dir"
+    cd "$dir"
+    cp ~/templates/presentation/main.tex "${name}.tex"
+    cp ~/templates/presentation/Makefile .
+    mkdir -p "fig"
+
+    [[ -z "$url" ]] && isurl='% '
+    replace '<author>' "$author" '<date>' "$date" '<title>' "$title" '<url>' "$url" '<isurl>' "$isurl" '<institute>' "$institute" -- "${name}.tex"
+
+    replace '<name>' "$name" -- Makefile
+}
+
+
+debug() {
+    echo "author=$author"
+    echo "date=$date"
+    echo "name=$name"
+    echo "title=$title"
+    echo "dir=$dir"
+    echo "url=$url"
+    echo "institute=$institute"
+}
+
+
+parse "$@"
+# debug
+work

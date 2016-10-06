@@ -1,0 +1,150 @@
+\documentclass{beamer}
+
+% {{{ Header
+\usepackage{polyglossia}
+\setdefaultlanguage{french}
+\usepackage{fontspec}
+
+  % {{{ Beamer
+\setbeamertemplate{footline}[frame number]
+\beamertemplatenavigationsymbolsempty
+
+\mode<presentation> {
+  \usetheme{Madrid}
+  \setbeamercolor{structure}{fg=red!70!black}
+  % \setbeamercovered{transparent}
+}
+
+\AtBeginSection[]{%
+  \begin{frame}
+    \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+      \usebeamerfont{title}\insertsectionhead\par%
+    \end{beamercolorbox}
+  \end{frame}
+}
+
+\usepackage{luacode}
+\directlua{
+  if string.find("\jobname", "notes") then
+    tex.print([[
+      \noexpand\usepackage{pgfpages}
+      \noexpand\setbeameroption{show notes on second screen=right}
+    ]])
+  end
+}
+  % }}}
+
+\usepackage{multicol}
+
+% {{{ Minted
+\usepackage[outputdir=build, cache=false]{minted}
+\usepackage[skins,minted]{tcolorbox}
+\usemintedstyle{monokai}
+
+% \setminted{
+%   fontfamily=tt,
+%   linenos,
+%   numberblanklines=true,
+%   numbersep=12pt,
+%   numbersep=5pt,
+%   gobble=0,
+%   frame=leftline,
+%   framesep=2mm,
+%   funcnamehighlighting=true,
+%   tabsize=4,
+%   obeytabs=false,
+%   mathescape=false
+%   samepage=false,
+%   showspaces=false,
+%   showtabs =false,
+%   texcl=false,
+%   baselinestretch=1.2,
+%   fontsize=\footnotesize,
+%   breaklines=true,
+% }
+
+% }}}
+
+% }}}
+
+% {{{ Templates
+  % {{{ Insert figure
+% \begin{figure}{Title}
+%   \includegraphics[width=0.8\textwidth]{fig/}
+%   \caption{}
+% \end{figure}
+  % }}}
+
+  % {{{ Insert title
+% \begin{frame}
+%   \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+%     \usebeamerfont{title}A Big Title\par%
+%   \end{beamercolorbox}
+% \end{frame}
+  % }}}
+
+  % {{{ Insert a multislide slide
+% \begin{frame}{Title}
+%   \only<1>{}
+%   \only<2>{}
+%   \only<3-5>{}
+%   \only<6->{}
+%   \only<-4>{}
+% \end{frame}
+  % }}}
+
+  % {{{ Code Block
+    % {{{ In Header
+% \definecolor{<language>bg}{rgb}{0.05,0.05,0.05}
+
+% \newtcblisting{<codeblock>}[2][]{
+%   listing engine=minted,
+%   listing only,
+%   #1,
+%   title=#2,
+%   minted language=<language>,
+%   colback=<language>bg
+% }
+    % }}}
+
+% \begin{frame}[fragile]{Title}
+%   \begin{<codeblock>}{name}
+%     /* Code */
+%   \end{<codeblock>}
+% \end{frame}
+  % }}}
+
+  % {{{ Notes
+% \begin{frame}{Title}
+%   \note{}
+%   \note[item]{}
+% \end{frame}
+  % }}}
+
+% }}}
+
+\title{<title>}
+\author{<author>}
+\institute{<institute>}
+\date{<date>}
+
+
+\begin{document} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+  \titlepage
+
+  <isurl>\begin{center}
+  <isurl>  \footnotesize{Présentation disponible sur
+  <isurl>  \url{<url>}}
+  <isurl>\end{center}
+\end{frame}
+
+
+\section*{Introduction} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Conclusion} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
+
+% vim: set spelllang=fr:
