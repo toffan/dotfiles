@@ -7,7 +7,7 @@
         set rtp+=~/.vim/bundle/Vundle.vim
         call vundle#begin()
 
-        Plugin 'gmarik/Vundle.vim'              " Manage plugins
+        " Plugin 'gmarik/Vundle.vim'              " Manage plugins
         Plugin 'tpope/vim-sensible'             " Add multiple features
         Plugin 'danro/rename.vim'               " Enable file renaming
 
