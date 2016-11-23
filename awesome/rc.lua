@@ -73,7 +73,7 @@ local layouts = {
 -- Define a tag table which hold all screen tags.
 tags = {
     names = {"1", "2", "3", "4", "5", "6", "7", "8", "9",},
-    layout = {layouts[2], layouts[2], layouts[2], layouts[2], layouts[5], layouts[2], layouts[2], layouts[2], layouts[2],},
+    layout = {layouts[2], layouts[2], layouts[2], layouts[2], layouts[5], layouts[2], layouts[2], layouts[2], layouts[4],},
 }
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
@@ -571,7 +571,6 @@ globalkeys = awful.util.table.join(
 
     awful.key({modkey}, "s", function()
         awful.util.spawn("pavucontrol")
-        awful.util.spawn("rhythmbox")
     end),
 
     awful.key({modkey}, "b", function()
@@ -756,7 +755,7 @@ awful.rules.rules = {
     },
 
     {
-        rule = {class = "Rhythmbox"},
+        rule = {class = "discord"},
         properties = {tag = tags[1][9]}
     },
 }
