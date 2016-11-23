@@ -68,7 +68,13 @@ context_prompt() {
 }
 # }}}
 
-PROMPT='$(context_prompt)'"%{$fg_bold[white]%}%3~%{$reset_color%} "'$(git_super_status)'"%# "
+# docker-machine prompt {{{
+dockermachine_prompt() {
+    [[ -n "${DOCKER_MACHINE_NAME}" ]] && echo "[${DOCKER_MACHINE_NAME}] "
+}
+# }}}
+
+PROMPT='$(context_prompt)''$(dockermachine_prompt)'"%{$fg_bold[white]%}%3~%{$reset_color%} "'$(git_super_status)'"%# "
 # }}}
 
 # ALIASES {{{
