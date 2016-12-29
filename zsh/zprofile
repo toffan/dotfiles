@@ -1,3 +1,5 @@
+export PATH="${PATH}:${HOME}/bin:${HOME}/bin/private"
+
 ### startx on tty1
 if [[ ! $DISPLAY && $XDG_VTNR == 1 ]]; then
     startx

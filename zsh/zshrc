@@ -26,7 +26,7 @@ REPORTTIME=2
 # }}}
 
 # COMPLETION {{{
-zstyle :compinstall filename '$HOME/.zshrc'
+zstyle :compinstall filename '$HOME/.zsh/.zshrc'
 autoload -Uz compinit
 compinit
 
@@ -115,15 +115,12 @@ alias zzz='i3lock; systemctl suspend'
 alias pass=' pass'
 
 # personal functions
-source ~/.zshfcts
+source ~/.zsh/.zshfcts
 # }}}
 
 # MISCELLANEOUS {{{
 # Set ls colors
 eval `dircolors ~/.ls_colors`
-
-# Environment variables
-export PATH="${PATH}:${HOME}/bin:${HOME}/bin/private"
 
 # Activate autojump
 [[ -s /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh
