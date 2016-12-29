@@ -24,9 +24,9 @@
         path: clang/clang-format
 
     # git
-    ~/.gitconfig:
+    ~/.config/git/config:
         create: true
-        path: git/gitconfig
+        path: git/config
 
     #terminator
     ~/.config/terminator/config:
