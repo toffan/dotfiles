@@ -69,6 +69,36 @@ mkdirmvcd() {
 
 # ###   OTHER   ################################################################
 
+warn() {
+    1>&2 echo $@
+}
+
+cd() {
+    builtin cd $@
+
+    local current_gitdir="$(git rev-parse --git-dir 2>/dev/null)"
+    if [[ -n "$current_gitdir" ]]; then
+        # sanitize $current_gitdir
+        if [[ "$current_gitdir" == ".git" ]]; then
+            current_gitdir="${PWD}/.git"
+        fi
+
+        if [[ "$previous_gitdir" != "$current_gitdir" ]]; then
+            local remote
+            remote="$(git remote get-url origin 2>/dev/null)"
+            if [[ "$?" == "0" ]]; then
+                out="$(git fetch 2>&1)"
+                if [[ "$?" == "0" ]] then
+                    [[ -n "$out" ]] && warn "$out"
+                else
+                    warn "From: $remote -- cannot fetch origin"
+                fi
+            fi
+            previous_gitdir="$current_gitdir"
+        fi
+    fi
+}
+
 confirm () {
     echo -n "${1} [y/N] "
     read -r response
