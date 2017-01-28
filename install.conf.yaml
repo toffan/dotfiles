@@ -22,6 +22,16 @@
         create: true
         path: git/config
 
+    # ncmpcpp
+    ~/.config/ncmpcpp/config:
+        create: true
+        path: ncmpcpp/config
+
+    # mpd
+    ~/.config/mpd/mpd.conf:
+        create: true
+        path: mpd/mpd.conf
+
     #terminator
     ~/.config/terminator/config:
         create: true
