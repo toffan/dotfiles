@@ -14,7 +14,6 @@ local menubar   = require("menubar")
 -- Miscellaneous
 local vicious = require("vicious")
 local lain    = require("lain")
-local menugen = require("menugen")
 -- }}}
 
 -- Error handling {{{
@@ -90,8 +89,8 @@ end
 -- }}}
 
 -- Menu {{{
-items = menugen.build_menu()
-items[#items + 1]= {"awesome", {
+items = {
+    {"awesome", {
     {"restart awesome", awesome.restart},
     {"quit awesome", awesome.quit},
     {"suspend", function()
@@ -100,6 +99,7 @@ items[#items + 1]= {"awesome", {
     {"reboot", terminal .. " -e 'systemctl reboot'"},
     {"shutdown", terminal .. " -e 'systemctl poweroff'"},
 }, "/usr/share/awesome/icons/awesome16.png"}
+}
 
 mymainmenu = awful.menu({items = items})
 
