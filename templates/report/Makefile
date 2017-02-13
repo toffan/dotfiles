@@ -2,7 +2,10 @@ TEXC = latexmk -lualatex -output-directory=build -shell-escape
 
 .PHONY: FORCE
 
-all: <name>.pdf
+all: show
+
+show: <name>.pdf
+	evince build/<name>.pdf &
 
 <name>.pdf: <name>.tex FORCE
 	$(TEXC) $<

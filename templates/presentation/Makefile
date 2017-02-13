@@ -2,7 +2,13 @@ TEXC = latexmk -lualatex -output-directory=build -shell-escape
 
 .PHONY: FORCE
 
-all: <name>.pdf notes-<name>.pdf
+all: show
+
+show: <name>.pdf notes-<name>.pdf
+	evince build/<name>.pdf build/notes-<name>.pdf &
+
+present: notes-<name>.pdf
+	dspdfviewer build/notes-<name>.pdf
 
 <name>.pdf: <name>.tex FORCE
 	$(TEXC) $<
