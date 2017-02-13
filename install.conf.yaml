@@ -8,9 +8,6 @@
     ~/.config/awesome/theme.lua:
         create: true
         path: awesome/theme.lua
-    ~/.config/awesome/lain:
-        create: true
-        path: awesome/lain
     ~/.config/awesome/icons:
         create: true
         path: awesome/icons

@@ -10,7 +10,3 @@
 	path = zsh/zsh-git-prompt
 	url = https://github.com/olivierverdier/zsh-git-prompt.git
 	branch = master
-[submodule "awesome/lain"]
-	path = awesome/lain
-	url = https://github.com/copycat-killer/lain.git
-	branch = master
