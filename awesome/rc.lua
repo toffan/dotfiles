@@ -470,7 +470,7 @@ Numeric_Pad = {"KP_End", "KP_Down", "KP_Next", "KP_Left", "KP_Begin", "KP_Right"
 
 globalkeys = awful.util.table.join(
     -- Awesome {{{
-    awful.key({modkey}, "s",
+    awful.key({modkey}, "x",
         hotkeys_popup.show_help,
         {description="show help", group="awesome"}
     ),
@@ -675,29 +675,34 @@ globalkeys = awful.util.table.join(
         {description = "lock", group = "launcher"}
     ),
 
-    awful.key({modkey}, "f",
+    awful.key({modkey}, Numeric_Pad[2],
         function() awful.spawn("firefox") end,
         {description = "run firefox", group = "launcher"}
     ),
 
-    awful.key({modkey}, "b",
+    awful.key({modkey}, Numeric_Pad[1],
         function() awful.spawn("thunderbird") end,
         {description = "run thunderbird", group = "launcher"}
     ),
 
     -- Avez vous testé "AwesomeRocks" ?
 
-    awful.key({modkey}, "p",
+    awful.key({modkey}, Numeric_Pad[5],
         function() awful.spawn("pidgin") end,
         {description = "run pidgin", group = "launcher"}
     ),
 
-    -- awful.key({modkey}, "s",
+    -- awful.key({modkey}, Numeric_Pad[8],
     --     function()
     --         awful.spawn(terminal .. " -e 'mpd; ncmpcpp'", {tag = awful.tag.find_by_name(awful.screen.focused(), "8")})
     --     end,
     --     {description = "run ncmpcpp", group = "launcher"}
     -- ),
+
+    awful.key({modkey}, Numeric_Pad[9],
+        function() awful.spawn("discord-canary") end,
+        {description = "run discord", group = "launcher"}
+    ),
 
     awful.key({}, "XF86Calculator",
         function() awful.spawn(terminal .. " -e python") end,
