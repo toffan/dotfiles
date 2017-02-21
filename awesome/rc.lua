@@ -53,6 +53,8 @@ modkey      = "Mod4"
 terminal    = "terminator"
 editor      = os.getenv("EDITOR")
 editor_cmd  = terminal .. " -e " .. editor
+browser     = os.getenv("BROWSER")
+mail_client = "thunderbird"
 -- }}}
 
 -- Menu {{{
@@ -676,13 +678,13 @@ globalkeys = awful.util.table.join(
     ),
 
     awful.key({modkey}, Numeric_Pad[2],
-        function() awful.spawn("firefox") end,
-        {description = "run firefox", group = "launcher"}
+        function() awful.spawn(browser) end,
+        {description = "run web browser", group = "launcher"}
     ),
 
     awful.key({modkey}, Numeric_Pad[1],
-        function() awful.spawn("thunderbird") end,
-        {description = "run thunderbird", group = "launcher"}
+        function() awful.spawn(mail_client) end,
+        {description = "run mail client", group = "launcher"}
     ),
 
     -- Avez vous testé "AwesomeRocks" ?
@@ -951,7 +953,7 @@ awful.rules.rules = {
     },
 
     {
-        rule = {class = "Firefox"},
+        rule = {class = "Chromium"},
         properties = {screen = 1, tag = "2"}
     },
 

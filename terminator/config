@@ -1,11 +1,13 @@
 [global_config]
   borderless = True
+  custom_url_handler = /usr/bin/chromium
   enabled_plugins = TerminalShot,
   focus = mouse
   title_hide_sizetext = True
   title_inactive_bg_color = "#3c3c3c"
   title_inactive_fg_color = "#ffffff"
   title_transmit_bg_color = "#00003c"
+  use_custom_url_handler = True
 [keybindings]
   new_tab = <Shift><Alt>Down
   next_tab = <Shift><Alt>Right
