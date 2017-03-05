@@ -25,8 +25,8 @@
 [profiles]
   [[default]]
     background_darkness = 0.7
-    background_image = None
     background_type = transparent
+    cursor_color = "#aaaaaa"
     font = DejaVu Sans Mono 11
     icon_bell = False
     scrollback_lines = 10000
