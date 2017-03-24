@@ -121,6 +121,7 @@
     set foldmethod=marker       " fold on triple {
     set conceallevel=0          " Do not hide characters
     set gdefault
+    set hlsearch
 
 " Other stuff
     set nocompatible
