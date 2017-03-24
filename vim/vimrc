@@ -29,6 +29,7 @@
         " Coloration
         Plugin 'ekalinin/Dockerfile.vim'        " Dockerfile
         Plugin 'rust-lang/rust.vim'             " Rust
+        Plugin 'cespare/vim-toml'               " Toml
         Plugin 'vim-scripts/django.vim'         " Django
 
         call vundle#end()
