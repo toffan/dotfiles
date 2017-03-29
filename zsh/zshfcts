@@ -123,15 +123,6 @@ pacnew() {
     done
 }
 
-dockip() {
-    docker inspect --format '{{ .NetworkSettings.IPAddress }}' "$@"
-}
-
-docker-clean() {
-    srcfile=${1:-/home/toffan/dev/docker-gc-exclude}
-    docker run --rm -v "/var/run/docker.sock:/var/run/docker.sock" -v "${srcfile}:/etc/docker-gc-exclude:ro" spotify/docker-gc
-}
-
 # Add color to man pages
 man() {
     env LESS_TERMCAP_mb=$(printf "\e[1;31m") \
@@ -143,3 +134,5 @@ man() {
         LESS_TERMCAP_us=$(printf "\e[1;32m") \
         man "$@"
 }
+
+# vim: set filetype=sh:

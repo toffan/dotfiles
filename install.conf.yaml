@@ -71,6 +71,9 @@
         path: X/Xresources
 
     # zsh
+    ~/.zsh/.dockerfcts:
+        create: true
+        path: zsh/dockerfcts
     ~/.zsh/.zshrc:
         create: true
         path: zsh/zshrc

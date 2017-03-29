@@ -116,6 +116,7 @@ alias pass=' pass'
 
 # personal functions
 source ~/.zsh/.zshfcts
+source ~/.zsh/.dockerfcts
 # }}}
 
 # MISCELLANEOUS {{{
