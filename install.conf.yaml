@@ -86,9 +86,9 @@
     ~/.zsh/.zprofile:
         create: true
         path: zsh/zprofile
-    ~/.zsh/.ls_colors:
+    ~/.zsh/.dircolors:
         create: true
-        path: zsh/ls_colors
+        path: zsh/dircolors
     ~/.zsh/.git-prompt.sh:
         create: true
         path: zsh/zsh-git-prompt/zshrc.sh
