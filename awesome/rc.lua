@@ -80,8 +80,7 @@ separator = wibox.widget.textbox(' | ')
 padding = wibox.widget.textbox('  ')
 
 -- Create a textclock widget {{{
-os.setlocale(os.getenv("LANG"))
-mytextclock = awful.widget.textclock("%a %d %b %H:%M", 10)
+textclock = require("widgets.textclock")
 -- }}}
 
 -- Battery Widget {{{
@@ -210,23 +209,7 @@ vicious.register(cpuinfowidget, vicious.widgets.cpu,
 -- }}}
 
 -- Net Widget {{{
-lanwidget = wibox.widget.textbox()
-vicious.register(lanwidget, vicious.widgets.net,
-    function(widget, args)
-        if args['{enp4s0 carrier}'] ~= 0 then
-            r = '<span weight="bold">LAN</span>'
-        else
-            r = 'LAN'
-        end
-
-        if args['{wlp3s0 carrier}'] ~= 0 then
-            r = r .. ' - <span weight="bold">WLAN</span>'
-        else
-            r = r .. ' - WLAN'
-        end
-
-        return r
-    end, 10)
+netwidget = require("widgets.net")
 -- }}}
 
 -- WIFI Widget {{{
@@ -411,7 +394,7 @@ awful.screen.connect_for_each_screen(function(s)
             padding,
             -- wifiwidget,
             -- separator,
-            lanwidget,
+            netwidget,
             separator,
             cpuinfowidget,
             cputempwidget,
@@ -423,7 +406,7 @@ awful.screen.connect_for_each_screen(function(s)
             batwidget,
             separator,
             mykeyboardlayout,
-            mytextclock,
+            textclock,
             padding,
             wibox.widget.systray(),
             paddind,

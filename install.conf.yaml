@@ -11,6 +11,9 @@
     ~/.config/awesome/icons:
         create: true
         path: awesome/icons
+    ~/.config/awesome/widgets:
+        create: true
+        path: awesome/widgets
 
     # clang
     ~/.clang-format:
