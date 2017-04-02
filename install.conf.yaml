@@ -2,18 +2,9 @@
 
 - link:
     # awesome
-    ~/.config/awesome/rc.lua:
+    ~/.config/awesome:
         create: true
-        path: awesome/rc.lua
-    ~/.config/awesome/theme.lua:
-        create: true
-        path: awesome/theme.lua
-    ~/.config/awesome/icons:
-        create: true
-        path: awesome/icons
-    ~/.config/awesome/widgets:
-        create: true
-        path: awesome/widgets
+        path: awesome
 
     # clang
     ~/.clang-format:
