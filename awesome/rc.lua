@@ -889,19 +889,23 @@ for i, t in pairs(tags) do
 
         awful.key({modkey, "Shift"}, "#" .. t.keycode,
             function()
-                local screen = client.focus.screen
-                local tag = awful.tag.gettags(screen)[i]
-                if client.focus and tag then
-                    awful.client.movetotag(tag)
+                if client.focus then
+                    local screen = client.focus.screen
+                    local tag = awful.tag.gettags(screen)[i]
+                    if client.focus and tag then
+                        awful.client.movetotag(tag)
+                    end
                 end
             end),
 
         awful.key({modkey, "Control", "Shift"}, "#" .. t.keycode,
             function()
-                local screen = client.focus.screen
-                local tag = awful.tag.gettags(screen)[i]
-                if client.focus and tag then
-                    awful.client.toggletag(tag)
+                if client.focus then
+                    local screen = client.focus.screen
+                    local tag = awful.tag.gettags(screen)[i]
+                    if client.focus and tag then
+                        awful.client.toggletag(tag)
+                    end
                 end
             end)
     )
