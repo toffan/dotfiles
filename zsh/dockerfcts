@@ -64,6 +64,20 @@ pulseview() {
         toffan/pulseview
 }
 
+rocketchat() {
+    readonly local SHARED="/tmp/rocketchat-shared"
+    mkdir -p "$SHARED"
+    docker run \
+        -v /tmp/.X11-unix:/tmp/.X11-unix \
+        -e "DISPLAY=unix$DISPLAY" \
+        -v "${HOME}/.config/Rocket.Chat+:/home/rocketchat/.config/Rocket.Chat+" \
+        -v /etc/localtime:/etc/localtime \
+        -v "${SHARED}:/home/rocketchat/shared" \
+        --device /dev/snd \
+        --group-add audio \
+        toffan/rocketchat
+}
+
 sigrok-cli() {
     readonly local SHARED="/tmp/sigrok-cli-shared"
     mkdir -p "$SHARED"
