@@ -210,7 +210,7 @@ vicious.register(cpuinfowidget, vicious.widgets.cpu,
 -- }}}
 
 -- Net Widget {{{
-netwidget = require("widgets.net")
+networkwidget = require("widgets.network")
 -- }}}
 
 -- WIFI Widget {{{

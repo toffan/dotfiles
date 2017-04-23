@@ -1,9 +1,8 @@
-local wibox = require("wibox")
-local vicious = require("vicious")
 local naughty = require("naughty")
+local vicious = require("vicious")
+local wibox = require("wibox")
 
 local notif = nil
-
 local netwidget = wibox.widget.textbox()
 
 vicious.register(netwidget, vicious.widgets.net,
@@ -21,23 +20,27 @@ vicious.register(netwidget, vicious.widgets.net,
         end
 
         return r
-    end, 10)
+    end, 11)
+
 
 netwidget:connect_signal("mouse::enter",
     function()
-        if textclock_notif == nil then
-            local result = io.popen("ip addr show"):read("*a")
-            notif = naughty.notify({
-                title = "Interfaces",
-                timeout = 0,
-                text = result,
-            })
-        end
+        local f = io.popen("ip addr show")
+        local r = f:read("*all"):sub(1, -2)
+        f:close()
+
+        notif = naughty.notify({
+            title = "Interfaces",
+            timeout = 0,
+            text = r,
+            font = "Deja Vu Sans Mono 10",
+        })
     end)
+
 
 netwidget:connect_signal("mouse::leave",
     function()
-        if notif ~= nil then
+        if notif then
             naughty.destroy(notif)
             notif = nil
         end
