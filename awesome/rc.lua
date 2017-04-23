@@ -346,7 +346,7 @@ awful.screen.connect_for_each_screen(function(s)
     end
 
     -- Create a promptbox for each screen
-    s.mypromptbox = awful.widget.prompt()
+    s.promptbox = awful.widget.prompt()
     -- Create an imagebox widget which will contains an icon indicating which layout we're using.
     -- We need one layoutbox per screen.
     s.mylayoutbox = awful.widget.layoutbox(s)
@@ -371,7 +371,7 @@ awful.screen.connect_for_each_screen(function(s)
         { -- Left widgets
             layout = wibox.layout.fixed.horizontal,
             s.mytaglist,
-            s.mypromptbox,
+            s.promptbox,
         },
         s.mytasklist, -- Middle widget
         { -- Right widgets
@@ -634,8 +634,21 @@ globalkeys = awful.util.table.join(
     ),
 
     awful.key({modkey}, "r",
-        function() awful.screen.focused().mypromptbox:run() end,
+        function() awful.screen.focused().promptbox:run() end,
         {description = "run prompt", group = "launcher"}
+    ),
+
+    awful.key({modkey, "Shift"}, "r",
+        function()
+            awful.prompt.run {
+                prompt = '<b>Run: </b>',
+                textbox = mouse.screen.promptbox.widget,
+                exe_callback = function(input)
+                        awful.spawn.with_shell("source $ZDOTDIR/.dockerfcts; " .. input)
+                    end
+            }
+        end,
+        {description = "run extended prompt", group = "launcher"}
     ),
 
     awful.key({modkey}, "F1",
