@@ -87,40 +87,41 @@ textclock = require("widgets.textclock")
 batwidget = wibox.widget.textbox()
 vicious.register(batwidget, vicious.widgets.bat,
     function(widget, args)
+        local state, percent, time, wear = unpack(args)
         r = 'BAT: '
 
-        if args[3] == 'N/A' then
+        if time == 'N/A' then
             r = r .. '↯'
         else
-            r = r .. args[1]
+            r = r .. state
         end
 
         r = r .. ' '
-        if args[2] < 15 then
-            r = r .. '<span color="red">' .. args[2] .. '</span>'
-        elseif  args[2] < 35 then
-            r = r .. '<span color="orange">' .. args[2] .. '</span>'
+        if percent < 15 then
+            r = r .. '<span color="red">' .. percent .. '</span>'
+        elseif  percent < 35 then
+            r = r .. '<span color="orange">' .. percent .. '</span>'
         else
-            r = r .. args[2]
+            r = r .. percent
         end
 
         r = r .. '% '
-        if args[3] ~= 'N/A' then
-            r = r .. '(' .. args[3] .. ')'
+        if time ~= 'N/A' then
+            r = r .. '(' .. time .. ')'
         end
 
         -- notification if need to load
-        if args[1] == '-' and args[2] < 75 then
+        if state == '−' and percent < 15 then
             naughty.notify({
                     preset = naughty.config.presets.critical,
-                    title = 'Batterie',
-                    text = 'La batterie doit être chargée immédiatement !',
+                    title = 'Low battery',
+                    text = 'Battery must be charged immediately!',
                     timeout = 30
             })
         end
 
         return r
-    end, 10, 'BAT0')
+    end, 67, 'BAT0')
 -- }}}
 
 -- Volume Widget {{{
