@@ -5,7 +5,7 @@ dockip() {
 }
 
 docker-clean() {
-    readonly local SRCFILE=${1:-/home/toffan/dev/docker-gc-exclude}
+    readonly local SRCFILE=${1:-$HOME/dev/docker-apps/docker-gc-exclude}
     docker run --rm \
         -v "/var/run/docker.sock:/var/run/docker.sock" \
         -v "${SRCFILE}:/etc/docker-gc-exclude:ro" \
@@ -15,10 +15,10 @@ docker-clean() {
 
 ###   APPLICATIONS   ###########################################################
 
-docker-gimp() {
+gimp() {
     readonly local SHARED="/tmp/gimp-shared"
     mkdir -p "$SHARED"
-    docker run -ti \
+    docker run \
         -v /tmp/.X11-unix:/tmp/.X11-unix \
         -e "DISPLAY=unix$DISPLAY" \
         -v "$HOME/.gimp-2.8:/home/gimp/.gimp-2.8" \
@@ -26,33 +26,42 @@ docker-gimp() {
         toffan/gimp
 }
 
-docker-pulseview() {
+grip() {
+    docker run --rm -ti \
+        -v "$PWD:/home/grip/shared:ro" \
+        -p "6419:6419" \
+        toffan/grip "$@"
+}
+
+nginx-dir() {
+    readonly local DIR=${1:-$PWD}
+    readonly local container="$(docker run --rm -d \
+        -v "${DIR}:/www:rw" \
+        -p 80 \
+        toffan/nginx-dir)"
+    readonly local hostport="$(docker inspect --format \
+        '{{(index (index .NetworkSettings.Ports "80/tcp") 0).HostPort}}' \
+        "$container")"
+    warn "$DIR available on http://localhost:${hostport}/"
+    warn "Kill with\ndocker rm -f $container"
+}
+
+pulseview() {
     readonly local SHARED="/tmp/pulseview-shared"
     mkdir -p "$SHARED"
-    docker run -ti \
+    docker run \
         -v /tmp/.X11-unix:/tmp/.X11-unix \
         -e "DISPLAY=unix$DISPLAY" \
         -v "$SHARED:/home/sigrok/shared" \
         toffan/pulseview
 }
 
-docker-sigrok-cli() {
+sigrok-cli() {
     readonly local SHARED="/tmp/sigrok-cli-shared"
     mkdir -p "$SHARED"
     docker run -ti \
         -v "${SHARED}:/home/sigrok/shared" \
         toffan/sigrok-cli
-}
-
-docker-nginx-dir() {
-    readonly local DIR=${1:-$PWD}
-    readonly local container="$(docker run --rm -d \
-        -v "${DIR}:/www:rw" \
-        -p 80 \
-        toffan/nginx-dir)"
-    readonly local hostport="$(docker inspect --format '{{(index (index .NetworkSettings.Ports "80/tcp") 0).HostPort}}' "$container")"
-    warn "$DIR available on http://localhost:${hostport}/"
-    warn "Kill with\ndocker rm -f $container"
 }
 
 # vim: set filetype=sh:
