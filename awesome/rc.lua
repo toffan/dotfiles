@@ -143,23 +143,7 @@ vicious.register(volwidget, vicious.widgets.volume,
 -- }}}
 
 -- Memory Widget {{{
-memwidget = wibox.widget.textbox()
-vicious.register(memwidget, vicious.widgets.mem,
-    function(widget, args)
-        r = 'RAM: '
-
-        if args[1] >= 80 then
-            r = r .. '<span color="red">' .. args[1] .. '</span>'
-        elseif args[1] >= 60 then
-            r = r .. '<span color="orange">' .. args[1] .. '</span>'
-        else
-            r = r .. args[1]
-        end
-
-        r = r .. '%'
-
-        return r
-    end, 2)
+memwidget = require("widgets.memory")
 -- }}}
 
 -- CPU Temperature Widget {{{
@@ -395,7 +379,7 @@ awful.screen.connect_for_each_screen(function(s)
             padding,
             -- wifiwidget,
             -- separator,
-            netwidget,
+            networkwidget,
             separator,
             cpuinfowidget,
             cputempwidget,
