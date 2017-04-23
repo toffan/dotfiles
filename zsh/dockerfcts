@@ -15,6 +15,20 @@ docker-clean() {
 
 ###   APPLICATIONS   ###########################################################
 
+discord() {
+    readonly local SHARED="/tmp/discord-shared"
+    mkdir -p "$SHARED"
+    docker run \
+        -v /tmp/.X11-unix:/tmp/.X11-unix \
+        -e "DISPLAY=unix$DISPLAY" \
+        -v "${HOME}/.config/discordcanary:/home/discord/.config/discordcanary" \
+        -v /etc/localtime:/etc/localtime \
+        -v "${SHARED}:/home/discord/shared" \
+        --device /dev/snd \
+        --group-add audio \
+        toffan/discord
+}
+
 gimp() {
     readonly local SHARED="/tmp/gimp-shared"
     mkdir -p "$SHARED"
