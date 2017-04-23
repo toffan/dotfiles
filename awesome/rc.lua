@@ -79,7 +79,7 @@ mainmenu = awful.menu({items = {
 separator = wibox.widget.textbox(' | ')
 padding = wibox.widget.textbox('  ')
 
--- Create a textclock widget {{{
+-- Textclock widget {{{
 textclock = require("widgets.textclock")
 -- }}}
 
