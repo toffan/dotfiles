@@ -64,14 +64,14 @@ mainmenu = awful.menu({items = {
         {"manual", terminal .. " -e man awesome"},
         {"restart", awesome.restart},
         {"quit", {{"I mean it", awesome.quit}},},
-    }, "/usr/share/awesome/icons/awesome16.png"},
+    }, os.getenv("HOME") .. "/.config/awesome/icons/awesome32.png"},
     {"system", {
         {"suspend", function()
                 awful.spawn("i3lock -u -t -i " .. os.getenv("HOME") .. "/Pictures/Wallpapers/screenlock; systemctl suspend")
             end},
         {"reboot", {{"I mean it", terminal .. " -e 'systemctl reboot'"}},},
         {"shutdown", {{"I mean it", terminal .. " -e 'systemctl poweroff'"}},},
-    }, },
+    }, os.getenv("HOME") .. "/.config/awesome/icons/system32.png"},
 }})
 -- }}}
 
