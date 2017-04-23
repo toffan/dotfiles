@@ -8,7 +8,7 @@ theme               = {}
 theme.dir           = os.getenv("HOME") .. "/.config/awesome"
 theme.wallpaper     = os.getenv("HOME") .. "/Pictures/Wallpapers/wallpaper"
 
-theme.font          = "sans 10"
+theme.font          = "Deja Vu Sans 10"
 theme.fg_normal     = "#747474"
 theme.bg_normal     = "#121212"
 theme.fg_focus      = "#dddcff"
