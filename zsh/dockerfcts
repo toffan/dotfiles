@@ -46,6 +46,14 @@ nginx-dir() {
     warn "Kill with\ndocker rm -f $container"
 }
 
+poezio() {
+    docker run -ti \
+        -v "${HOME}/.config/poezio:/home/poezio/.config/poezio" \
+        -v "${HOME}/.local/share/poezio:/home/poezio/.local/share/poezio" \
+        -v /etc/localtime:/etc/localtime \
+        toffan/poezio
+}
+
 pulseview() {
     readonly local SHARED="/tmp/pulseview-shared"
     mkdir -p "$SHARED"
