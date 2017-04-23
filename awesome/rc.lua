@@ -502,37 +502,13 @@ globalkeys = awful.util.table.join(
     -- Client focus {{{
     awful.key({modkey}, "j",
         function () awful.client.focus.byidx(1) end,
-        -- function()
-        --     awful.client.focus.bydirection("down")
-        --     if client.focus then client.focus:raise() end
-        -- end,
         {description = "focus next by index", group = "client"}
     ),
 
     awful.key({modkey}, "k",
         function () awful.client.focus.byidx(-1) end,
-        -- function()
-        --     awful.client.focus.bydirection("up")
-        --     if client.focus then client.focus:raise() end
-        -- end,
         {description = "focus previous by index", group = "client"}
     ),
-
-    -- awful.key({modkey}, "h",
-    --     function()
-    --         awful.client.focus.bydirection("left")
-    --         if client.focus then client.focus:raise() end
-    --     end,
-    --     {description = "decrease master width factor", group = "layout"}
-    -- ),
-
-    -- awful.key({modkey}, "l",
-    --     function()
-    --         awful.client.focus.bydirection("right")
-    --         if client.focus then client.focus:raise() end
-    --     end,
-    --     {description = "increase master width factor", group = "layout"}
-    -- ),
 
     awful.key({modkey}, "Escape",
         function()
