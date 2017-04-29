@@ -44,9 +44,6 @@
     ~/.vim/bundle/YouCompleteMe/cpp/ycm_extra_conf.py:
         create: true
         path: vim/ycm/ycm_extra_conf.py
-    ~/.vim/bundle/YouCompleteMe/Makefile:
-        create: true
-        path: vim/ycm/Makefile
     ~/.vim/syntax/egg.vim:
         create: true
         path: vim/syntax/egg.vim
