@@ -62,25 +62,25 @@
         path: X/Xresources
 
     # zsh
-    ~/.zsh/.dockerfcts:
+    $ZDOTDIR/.dockerfcts:
         create: true
         path: zsh/dockerfcts
-    ~/.zsh/.zshrc:
+    $ZDOTDIR/.zshrc:
         create: true
         path: zsh/zshrc
-    ~/.zsh/.zshfcts:
+    $ZDOTDIR/.zshfcts:
         create: true
         path: zsh/zshfcts
     ~/.zshenv:
         create: true
         path: zsh/zshenv
-    ~/.zsh/.zprofile:
+    $ZDOTDIR/.zprofile:
         create: true
         path: zsh/zprofile
-    ~/.zsh/.dircolors:
+    $ZDOTDIR/.dircolors:
         create: true
         path: zsh/dircolors
-    ~/.zsh/.git-prompt.sh:
+    $ZDOTDIR/.git-prompt.sh:
         create: true
         path: zsh/zsh-git-prompt/zshrc.sh
 
