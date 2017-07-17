@@ -24,8 +24,10 @@
     rebase = preserve
 
 [alias]
+    br = branch
     co = checkout
     st = status
+
     last = log -1 HEAD
     gr = log --graph --oneline
     graph = log --graph --pretty
