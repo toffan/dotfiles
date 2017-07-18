@@ -1,92 +1,50 @@
+- defaults:
+    ctreate: true
+    relink: true
+
 - clean: ['~']
 
 - link:
     # awesome
-    ~/.config/awesome:
-        create: true
-        path: awesome
+    ~/.config/awesome: awesome
 
     # clang
-    ~/.clang-format:
-        create: true
-        path: clang/clang-format
+    ~/.clang-format: clang/clang-format
 
     # git
-    ~/.config/git/config:
-        create: true
-        path: git/config
+    ~/.config/git/config: git/config
 
     # ncmpcpp
-    ~/.config/ncmpcpp/config:
-        create: true
-        path: ncmpcpp/config
+    ~/.config/ncmpcpp/config: ncmpcpp/config
 
     # mpd
-    ~/.config/mpd/mpd.conf:
-        create: true
-        path: mpd/mpd.conf
+    ~/.config/mpd/mpd.conf: mpd/mpd.conf
 
-    #terminator
-    ~/.config/terminator/config:
-        create: true
-        path: terminator/config
+    # terminator
+    ~/.config/terminator/config: terminator/config
 
     # vim
-    ~/.vimrc:
-        create: true
-        path: vim/vimrc
-    ~/.vim/colors/toffan.vim:
-        create: true
-        path: vim/toffan.vim
-    ~/.vim/bundle/Vundle.vim:
-        create: true
-        path: vim/Vundle.vim
-    ~/.vim/bundle/YouCompleteMe/cpp/ycm_extra_conf.py:
-        create: true
-        path: vim/ycm/ycm_extra_conf.py
-    ~/.vim/syntax/egg.vim:
-        create: true
-        path: vim/syntax/egg.vim
+    ~/.vimrc: vim/vimrc
+    ~/.vim/colors/toffan.vim: vim/toffan.vim
+    ~/.vim/bundle/Vundle.vim: vim/Vundle.vim
+    ~/.vim/bundle/YouCompleteMe/cpp/ycm_extra_conf.py: vim/ycm/ycm_extra_conf.py
+    ~/.vim/syntax/egg.vim: vim/syntax/egg.vim
 
     # vimperator
-    ~/.vimperatorrc:
-        create: true
-        path: vimperator/vimperatorrc
+    ~/.vimperatorrc: vimperator/vimperatorrc
 
     # X
-    ~/.xinitrc:
-        create: true
-        path: X/xinitrc
-    ~/.Xresources:
-        create: true
-        path: X/Xresources
+    ~/.xinitrc: X/xinitrc
+    ~/.Xresources: X/Xresources
 
     # zsh
-    $ZDOTDIR/.dockerfcts:
-        create: true
-        path: zsh/dockerfcts
-    $ZDOTDIR/.zshrc:
-        create: true
-        path: zsh/zshrc
-    $ZDOTDIR/.zshfcts:
-        create: true
-        path: zsh/zshfcts
-    ~/.zshenv:
-        create: true
-        path: zsh/zshenv
-    $ZDOTDIR/.zprofile:
-        create: true
-        path: zsh/zprofile
-    $ZDOTDIR/.dircolors:
-        create: true
-        path: zsh/dircolors
-    $ZDOTDIR/.git-prompt.sh:
-        create: true
-        path: zsh/zsh-git-prompt/zshrc.sh
+    $ZDOTDIR/.dockerfcts: zsh/dockerfcts
+    $ZDOTDIR/.zshrc: zsh/zshrc
+    $ZDOTDIR/.zshfcts: zsh/zshfcts
+    ~/.zshenv: zsh/zshenv
+    $ZDOTDIR/.zprofile: zsh/zprofile
+    $ZDOTDIR/.dircolors: zsh/dircolors
+    $ZDOTDIR/.git-prompt.sh: zsh/zsh-git-prompt/zshrc.sh
 
-    ~/bin:
-        create: true
-        path: bin
-    ~/templates:
-        create: true
-        path: templates
+    ~/bin: bin
+    ~/templates: templates
