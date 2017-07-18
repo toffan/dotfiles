@@ -9,6 +9,7 @@
 
         " Plugin 'gmarik/Vundle.vim'              " Manage plugins
         Plugin 'tpope/vim-sensible'             " Add multiple features
+        Plugin 'dahu/vim-fanfingtastic'         " Enhance f & t searches
         Plugin 'danro/rename.vim'               " Enable file renaming
 
         Plugin 'SirVer/ultisnips'               " Use snippets
@@ -18,6 +19,8 @@
         Plugin 'tell-k/vim-autopep8'            " Clean python
         Plugin 'tpope/vim-commentary'           " Auto (de)comment
         Plugin 'tpope/vim-endwise'              " Auto end
+        Plugin 'tpope/vim-eunuch'               " Misc shell enhancements
+        Plugin 'tpope/vim-surround'             " Surround text with delimiters
         Plugin 'matze/vim-move'                 " Move blocs through code and indentation
 
         Plugin 'bling/vim-airline'              " Explicit status bar
@@ -25,6 +28,9 @@
         Plugin 'Yggdroot/indentLine'            " Explicit indentation
         Plugin 'ntpeters/vim-better-whitespace' " Spot and remove bad whitespaces
         Plugin 'google/vim-searchindex'         " Print number of results in a search
+        Plugin 'lfv89/vim-interestingwords'     " Highlight words
+        Plugin 'will133/vim-dirdiff'            " Make the difference betweent wo folders
+        Plugin 'AndrewRadev/splitjoin.vim'      " Switch between oneline and multiline code
 
         " Coloration
         Plugin 'ekalinin/Dockerfile.vim'        " Dockerfile
@@ -40,6 +46,8 @@
 " For C++
     let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm_extra_conf.py'
     let g:syntastic_cpp_compiler_options='-std=c++14 -linclude'
+
+    let g:syntastic_cpp_check_header=1
     let g:ycm_complete_in_comments=1
     let g:ycm_confirm_extra_conf=0
     set matchpairs+=<:>
@@ -53,7 +61,7 @@
 
 " For Python
     let g:syntastic_python_checkers = ['flake8']
-    let g:syntastic_python_flake8_post_args = '--ignore=E501,E261'
+    let g:syntastic_python_flake8_post_args = '--ignore=E501'
 
 " For Java
     autocmd FileType java setlocal textwidth=0
@@ -108,8 +116,8 @@
 " General remap
     nmap <S-Enter> O<Esc>
     nmap <CR> o<Esc>
-    nmap zz [s
     map Y y$
+    cmap w!! SudoWrite
 " }}}
 
 " Personal settings
@@ -138,6 +146,7 @@
     set whichwrap=b,s,h,l,<,>,~,[,]
     filetype plugin indent on
     syntax on
+
 
 " {{{ Cosmetic
 " Coloration
