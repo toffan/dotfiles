@@ -90,6 +90,9 @@
 
 " For vhdl
     autocmd FileType vhdl setlocal commentstring=--\ %s
+
+" For Shell
+    let g:syntastic_sh_checkers = ['shellcheck']
 " }}}
 
 " {{{ Remap
