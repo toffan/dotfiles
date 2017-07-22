@@ -51,7 +51,7 @@ end
 altkey      = "Mod1"
 modkey      = "Mod4"
 terminal    = "terminator"
-editor      = os.getenv("EDITOR")
+editor      = os.getenv("EDITOR") or 'vi'
 editor_cmd  = terminal .. " -e " .. editor
 browser     = os.getenv("BROWSER")
 mail_client = "thunderbird"
