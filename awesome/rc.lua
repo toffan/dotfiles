@@ -898,7 +898,7 @@ awful.rules.rules = {
     },
 
     {
-        rule = {class = "gimp"},
+        rule = {class = "Pinentry"},
         properties = {floating = true}
     },
 
