@@ -117,6 +117,7 @@
     vnoremap <Down> gj
 
 " General remap
+    let mapleader = ","
     nmap <S-Enter> O<Esc>
     nmap <CR> o<Esc>
     map Y y$
