@@ -51,6 +51,8 @@ end
 altkey      = "Mod1"
 modkey      = "Mod4"
 terminal    = "terminator"
+home        = os.getenv("HOME")
+confdir     = home .. "/.config/awesome"
 editor      = os.getenv("EDITOR") or 'vi'
 editor_cmd  = terminal .. " -e " .. editor
 browser     = os.getenv("BROWSER")
@@ -64,14 +66,14 @@ mainmenu = awful.menu({items = {
         {"manual", terminal .. " -e man awesome"},
         {"restart", awesome.restart},
         {"quit", {{"I mean it", awesome.quit}},},
-    }, os.getenv("HOME") .. "/.config/awesome/icons/awesome32.png"},
+    }, home .. "/icons/awesome32.png"},
     {"system", {
         {"suspend", function()
-                awful.spawn("i3lock -u -t -i " .. os.getenv("HOME") .. "/Pictures/Wallpapers/screenlock; systemctl suspend")
+                awful.spawn("i3lock -u -t -i " .. home .. "/pictures/wallpapers/screenlock; systemctl suspend")
             end},
         {"reboot", {{"I mean it", terminal .. " -e 'systemctl reboot'"}},},
         {"shutdown", {{"I mean it", terminal .. " -e 'systemctl poweroff'"}},},
-    }, os.getenv("HOME") .. "/.config/awesome/icons/system32.png"},
+    }, confdir .. "/icons/system32.png"},
 }})
 -- }}}
 
@@ -297,7 +299,7 @@ end
 screen.connect_signal("property::geometry", set_wallpaper)
 
 -- Themes define colours, icons, and wallpapers
-beautiful.init(os.getenv("HOME") .. "/.config/awesome/theme.lua")
+beautiful.init(confdir .. "/theme.lua")
 -- }}}
 
 -- Tags {{{
@@ -629,7 +631,7 @@ globalkeys = awful.util.table.join(
 
     awful.key({modkey}, "F1",
         function()
-            awful.spawn("i3lock -u -t -i " .. os.getenv("HOME") .. "/Pictures/Wallpapers/screenlock")
+            awful.spawn("i3lock -u -t -i " .. home .. "/pictures/wallpapers/screenlock")
         end,
         {description = "lock", group = "launcher"}
     ),
@@ -669,7 +671,7 @@ globalkeys = awful.util.table.join(
     ),
 
     awful.key({}, "XF86Launch1",
-        function() awful.spawn("scrot -s " .. os.getenv("HOME") .. "/Pictures/screenshots/%Y-%m-%d_%H:%M:%S.png") end,
+        function() awful.spawn("scrot -s " .. home .. "/pictures/screenshots/%Y-%m-%d_%H:%M:%S.png") end,
         {description = "take a screenshot", group = "launcher"}
     ),
     -- }}}

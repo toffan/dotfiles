@@ -84,7 +84,7 @@ alias ls='ls --color=auto'
 alias pacman='pacman --color=auto'
 
 alias cling='cling -std=c++14'
-alias i3lock='i3lock -u -t -i $HOME/Pictures/Wallpapers/screenlock'
+alias i3lock='i3lock -u -t -i $HOME/pictures/wallpapers/screenlock'
 alias objdump='objdump --disassembler-options=intel'
 
 # shortcuts
