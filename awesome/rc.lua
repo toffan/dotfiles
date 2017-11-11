@@ -69,7 +69,7 @@ mainmenu = awful.menu({items = {
     }, home .. "/icons/awesome32.png"},
     {"system", {
         {"suspend", function()
-                awful.spawn("i3lock -u -t -i " .. home .. "/pictures/wallpapers/screenlock; systemctl suspend")
+                awful.spawn("i3lock -euti " .. home .. "/pictures/wallpapers/screenlock; systemctl suspend")
             end},
         {"reboot", {{"I mean it", terminal .. " -e 'systemctl reboot'"}},},
         {"shutdown", {{"I mean it", terminal .. " -e 'systemctl poweroff'"}},},
@@ -631,7 +631,7 @@ globalkeys = awful.util.table.join(
 
     awful.key({modkey}, "F1",
         function()
-            awful.spawn("i3lock -u -t -i " .. home .. "/pictures/wallpapers/screenlock")
+            awful.spawn("i3lock -euti " .. home .. "/pictures/wallpapers/screenlock")
         end,
         {description = "lock", group = "launcher"}
     ),
