@@ -47,7 +47,7 @@ hi Type                 ctermfg=81   cterm=none
 
 hi Special              ctermfg=26   cterm=none
 
-hi Todo                 ctermfg=245  cterm=none
+hi Todo                 ctermfg=10   ctermbg=none cterm=underline,bold
 
 " Syntastic
 hi SignColumn           ctermbg=none
