@@ -31,4 +31,5 @@
     icon_bell = False
     scrollback_lines = 10000
     scrollbar_position = hidden
+    urgent_bell = True
     use_system_font = False
