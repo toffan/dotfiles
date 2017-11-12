@@ -1,0 +1,12 @@
+# General
+*.swp
+*.swo
+build/
+
+# Python
+*.pyc
+__pycache__/
+
+# C - C++
+*.o
+*.out

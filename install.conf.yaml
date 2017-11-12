@@ -12,7 +12,7 @@
     ~/.clang-format: clang/clang-format
 
     # git
-    ~/.config/git/config: git/config
+    ~/.config/git: git
 
     # ncmpcpp
     ~/.config/ncmpcpp/config: ncmpcpp/config
