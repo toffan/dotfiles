@@ -17,6 +17,13 @@
 [github]
     user = toffan
 
+[merge]
+    tool=vimdiff
+    conflictstyle=diff3
+
+[mergetool]
+    prompt=false
+
 [log]
 	decorate = short
 
