@@ -1,3 +1,4 @@
 [[ -f ~/.Xresources ]] && xrdb -I$HOME ~/.Xresources
 pgrep redshift &>/dev/null || redshift &>/dev/null &
+eval $(ssh-agent -t 5m)
 exec awesome
