@@ -113,12 +113,21 @@ vicious.register(batwidget, vicious.widgets.bat,
         end
 
         -- notification if need to load
-        if state == '−' and percent < 15 then
+        if state == '-' and percent < 15 then
             naughty.notify({
                     preset = naughty.config.presets.critical,
                     title = 'Low battery',
                     text = 'Battery must be charged immediately!',
-                    timeout = 30
+                    timeout = 66,
+                    icon = home .. '/pictures/logo/power_64.png',
+            })
+        elseif state == '-' and percent < 35 then
+            naughty.notify({
+                    preset = naughty.config.presets.normal,
+                    title = 'Low battery',
+                    text = 'Battery must be charged!',
+                    timeout = 66,
+                    icon = home .. '/pictures/logo/power_64.png',
             })
         end
 
