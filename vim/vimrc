@@ -122,6 +122,10 @@
     nmap <CR> o<Esc>
     map Y y$
     cmap w!! SudoWrite
+
+    map <leader>l :YcmCompleter GoToDefinition<CR>
+    map <leader>L :YcmCompleter GoToDeclaration<CR>
+    map <leader>m :YcmCompleter GoToReferences<CR>
 " }}}
 
 " Personal settings
