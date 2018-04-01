@@ -14,6 +14,9 @@
 [diff]
     tool = vimdiff
 
+[difftool]
+    prompt = false
+
 [github]
     user = toffan
 
@@ -38,3 +41,5 @@
     last = log -1 HEAD
     gr = log --graph --oneline
     graph = log --graph --pretty
+
+    vshow = "!f() { readonly rev=${1-HEAD}; dit difftool ${rev}~ $rev; }; f"

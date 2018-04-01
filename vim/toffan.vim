@@ -57,10 +57,10 @@ hi SyntasticError       ctermfg=160  cterm=underline
 hi SyntasticWarning     ctermfg=202  cterm=underline
 
 " Vimdiff
-hi DiffAdd              ctermbg=235  cterm=bold
-hi DiffDelete           ctermbg=235  cterm=bold
-hi DiffChange           ctermbg=235  cterm=bold
-hi DiffText             ctermbg=160  cterm=bold
+hi DiffAdd              ctermbg=233  cterm=bold
+hi DiffDelete           ctermbg=233  cterm=bold
+hi DiffChange           ctermbg=233  cterm=bold
+hi DiffText             ctermbg=235  cterm=NONE
 
 " Git
 hi diffAdded            ctermfg=2
